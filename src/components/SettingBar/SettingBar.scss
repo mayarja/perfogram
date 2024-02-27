@@ -1,0 +1,90 @@
+.SettingBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .wrapper-one {
+    // flex: 0 0 auto;
+  }
+  .wrapper-two {
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .conatiner-box {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    .box-action {
+      overflow: hidden;
+      background-color: rgb(255, 255, 255);
+      border-radius: 4px 4px 0px 0px;
+      border: 1px solid rgba(27, 31, 41, 0.2);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px -3px;
+      .active {
+        background-color: rgba(218, 56, 27, 0.15) !important;
+        svg {
+          fill: rgb(218, 56, 27);
+        }
+        i {
+          color: rgb(218, 56, 27) !important;
+        }
+      }
+      .box-icon {
+        min-width: 80px;
+        height: 56px;
+        padding: 4px 8px;
+        overflow: hidden;
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        -webkit-box-pack: end;
+        justify-content: flex-end;
+        -webkit-box-align: center;
+        align-items: center;
+        user-select: none;
+        text-decoration: none;
+        background-color: rgb(255, 255, 255);
+        transition: background 0.32s ease 0s;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(245, 245, 245);
+        }
+        i {
+          color: rgb(79, 84, 97);
+          font-size: 23px;
+        }
+        span {
+          margin: 0px;
+          color: rgb(79, 84, 97);
+          font-family: "Noto Sans JP", Prompt, sans-serif !important;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+      }
+    }
+    .box-question {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-direction: column;
+      .question {
+        color: rgb(0, 75, 196) !important;
+        font-size: inherit;
+        text-decoration: underline;
+        cursor: pointer;
+        margin: 0px;
+        color: rgb(79, 84, 97);
+        font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+          sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.6;
+        margin-left: 16px;
+      }
+    }
+  }
+}

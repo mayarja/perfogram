@@ -1,0 +1,201 @@
+import React, { useState } from "react";
+import "./Mainpage.scss";
+import video1 from "../../assits/testVideo.webm";
+import img1 from "../../assits/about-1.jpg";
+import { useWindowSize } from "@react-hook/window-size";
+
+function MainPage() {
+  let images = [
+    {
+      src: img1,
+      type: "main",
+    },
+    {
+      src: img1,
+      type: "main",
+    },
+    {
+      src: img1,
+      type: "main",
+    },
+    {
+      src: img1,
+      type: "main",
+    },
+  ];
+
+  let [checkone, setCheckOne] = useState(true);
+
+  let totalItems = images.length;
+
+  //logic 1
+  //   const gap = 0.5; // Adjust this value to control the gap size
+  //   const width = (100 - gap * (numberOfImages - 1)) / numberOfImages;
+  //   const left = index * (width + gap);
+  //   return {
+  //     width: ${width}%,
+  //     left: ${left}%,
+  //     height: "100%",
+  //     position: "absolute",
+  //     top: 0,
+  //   };
+
+  // Calculate dynamic styles based on the number of images
+
+  const boxStyles = (index, totalItems) => {
+    const gridColumns =
+      totalItems % 2 === 0 ? totalItems / 2 : (totalItems - 1) / 2; // Adjustable for different layouts
+    let gap = 3;
+    if (totalItems === 2) {
+      const width = "47%";
+      const height = "47%";
+      const left = index === 0 ? "2%" : "51%";
+      const top = "26.5%";
+
+      return {
+        width,
+        height,
+        left,
+        top,
+        position: "absolute",
+      };
+    } else {
+      // Even number of participants
+      if (totalItems % 2 === 0) {
+        // Even number of participants
+        const row = Math.floor(index / gridColumns);
+        const col = index % gridColumns;
+        return {
+          width: `${100 / gridColumns - gap / (gridColumns - 1)}%`,
+          left: `${col * (100 / gridColumns + gap / (gridColumns - 1))}%`,
+          top: `${row * (100 / gridColumns + gap / (gridColumns - 1))}%`,
+          height: `${100 / gridColumns - gap / (gridColumns - 1)}%`,
+          position: "absolute",
+        };
+      }
+      // Add more conditions or return default values as needed
+      else {
+        // Odd number of participants
+        if (index < Math.floor(totalItems / 2)) {
+          // Top row participant
+          const gapAdjustment =
+            totalItems % 2 === 1 ? (100 / gridColumns - gap) / 2 : 0; // Adjust for center box in odd group
+          return {
+            width: `${100 / gridColumns + gapAdjustment}%`,
+            left: `${index * (100 / gridColumns + gap)}%`,
+            top: "0",
+            height: `${100 / gridColumns}%`,
+            position: "absolute",
+          };
+        } else {
+          // Bottom row participant
+          const gapAdjustment =
+            totalItems % 2 === 1 ? -(100 / gridColumns - gap) / 2 : 0; // Adjust for center box in odd group
+          return {
+            width: `${100 / gridColumns + gapAdjustment}%`,
+            left: `${
+              (index - Math.floor(totalItems / 2)) * (100 / gridColumns + gap)
+            }%`,
+            top: `${100 / gridColumns}%`,
+            height: `${100 / gridColumns}%`,
+            position: "absolute",
+          };
+        }
+      }
+    }
+  };
+
+  return (
+    <div className="row sdasd">
+      <div className="col-md-9">
+        {/**Box Of Video */}
+        <div className="box-conatiner">
+          <div className="box-conatiner1">
+            <div className="box-conatiner2">
+              {images.map((video, index) => {
+                return (
+                  <div
+                    className="box-view"
+                    style={boxStyles(index, images.length)}
+                    key={index}
+                  >
+                    <img src={video.src} alt="..." className="video-feed" />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        <div className="box-btns">
+          <button className="btn btn-primary">Only Main</button>
+          <button className="btn btn-primary">Near Togther</button>
+          <button className="btn btn-primary">
+            Near Togther With larg gap an padding
+          </button>
+          <button className="btn btn-primary">
+            Big Main and the another is the small
+          </button>
+        </div>
+      </div>
+      <div className="col-md-3">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+      </div>
+    </div>
+  );
+}
+
+export default MainPage;
+
+
+//style//
+
+.sdasd {
+  margin-top: 100px !important;
+
+  .box-conatiner{
+    width: 100%;
+    flex: 0 0 auto;
+    margin: 8px 8px 0px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 100%;
+  }
+  .box-conatiner1{
+    transition: width 300ms ease 0s, height 300ms ease 0s;
+    position: relative;
+    gap: 2px;
+    width: 687.644px;
+    height: 386.8px;
+    display: flex;
+    overflow: hidden;
+    background: rgb(234, 104, 130);
+  }
+  .box-conatiner2{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .box-view {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        transition: width 0.3s ease 0s, height 0.3s ease 0s, left 0.3s ease 0s, top 0.3s ease 0s, opacity 0.3s ease 0s;
+        background-color: rgb(19, 19, 21);
+        pointer-events: none;
+  }
+
+.video-feed {
+    width: 100%;
+    height: 100%;
+}
+}

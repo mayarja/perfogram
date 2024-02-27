@@ -1,0 +1,27 @@
+import React from "react";
+import "./Mainpage.scss";
+import Navbar from "../../components/Navbar/Navbar";
+import BoxVideo from "../../components/BoxVideo/BoxVideo";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import UnderStage from "../../components/UnderStage/UnderStage";
+import SettingBar from "../../components/SettingBar/SettingBar";
+
+function MainPage() {
+  return (
+    <div className="Box-Project">
+      <Navbar />
+      <div className="main-box">
+        <div className="box-show row">
+          <div className="col-sm-12">
+            <BoxVideo />
+            <UnderStage />
+            <SettingBar />
+          </div>
+        </div>
+        <Sidebar />
+      </div>
+    </div>
+  );
+}
+
+export default MainPage;
