@@ -115,15 +115,15 @@ function SettingBar() {
               )}
               <div className="box-icon">
                 <i className="fa-solid fa-gear"></i>
-                <span>Setting</span>
+                <span>Settings</span>
               </div>
               <div className="box-icon">
                 <i className="fa-solid fa-desktop" />
-                <span>Prevent</span>
+                <span>Present</span>
               </div>
               <div className="box-icon">
                 <i className="fa-solid fa-user-plus" />
-                <span>invite</span>
+                <span>Invite</span>
               </div>
               <div className="box-icon">
                 <i
