@@ -74,7 +74,7 @@ function UnderStage() {
   return (
     <div className="understage">
       <div className="wrpaer-understage">
-        <div className="box-understange">
+        <div className="box-conatiner-2">
           {/*Box Fro user details and image */}
           {data &&
             data.map((e, index) => {
@@ -279,7 +279,7 @@ function UnderStage() {
                       className="AddBtn"
                       onClick={(e) => handleStateLogic(index)}
                     >
-                      <text>Add To stage</text>
+                      <text>Add to stage</text>
                     </div>
                   )}
                 </div>

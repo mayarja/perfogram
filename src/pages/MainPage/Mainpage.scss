@@ -1,5 +1,5 @@
 .Box-Project {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
@@ -12,7 +12,16 @@
     .box-show {
       flex: 1 1 0%;
       position: relative;
-      // padding-top: 20px !important;
+      .box-wraperrr {
+        flex: 0 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: center;
+        position: absolute;
+        inset: 0px;
+      }
     }
     .box-setting {
       flex: 0 0 auto;

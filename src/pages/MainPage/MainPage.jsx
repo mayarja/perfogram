@@ -12,7 +12,7 @@ function MainPage() {
       <Navbar />
       <div className="main-box">
         <div className="box-show row">
-          <div className="col-sm-12">
+          <div className="col-sm-12 box-wraperrr">
             <BoxVideo />
             <UnderStage />
             <SettingBar />
