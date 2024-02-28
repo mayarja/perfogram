@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/streamYard/static/css/main.0202afe1.css",
-    "main.js": "/streamYard/static/js/main.2b10470f.js",
+    "main.css": "/streamYard/static/css/main.122c0be3.css",
+    "main.js": "/streamYard/static/js/main.ddc6d556.js",
     "static/media/about-1.jpg": "/streamYard/static/media/about-1.73f95a7b91a6a06088b1.jpg",
     "static/media/videoBack.mp4": "/streamYard/static/media/videoBack.f8cc5d6e8f2ec896cce0.mp4",
     "static/media/logo-start.svg": "/streamYard/static/media/logo-start.f03aded2a495c253eef1896e22147302.svg",
     "static/media/logo.svg": "/streamYard/static/media/logo.98b515c50c4d39ed79a77b070a33cb20.svg",
     "index.html": "/streamYard/index.html",
-    "main.0202afe1.css.map": "/streamYard/static/css/main.0202afe1.css.map",
-    "main.2b10470f.js.map": "/streamYard/static/js/main.2b10470f.js.map"
+    "main.122c0be3.css.map": "/streamYard/static/css/main.122c0be3.css.map",
+    "main.ddc6d556.js.map": "/streamYard/static/js/main.ddc6d556.js.map"
   },
   "entrypoints": [
-    "static/css/main.0202afe1.css",
-    "static/js/main.2b10470f.js"
+    "static/css/main.122c0be3.css",
+    "static/js/main.ddc6d556.js"
   ]
 }
