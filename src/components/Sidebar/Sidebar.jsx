@@ -33,7 +33,7 @@ function Sidebar() {
               onClick={(e) => setCheck("Commints")}
             >
               <i className="fa-solid fa-message"></i>
-              <span>Commints</span>
+              <span>Comments</span>
             </div>
             <div
               className={`container-icon ${

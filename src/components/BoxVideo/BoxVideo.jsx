@@ -76,13 +76,13 @@ function BoxVideo() {
           className="box-conatiner"
           style={{
             height: `${
-              width > divRef.current.clientWidth
-                ? (divRef.current.clientWidth * 9) / 16
+              width > divRef.current?.clientWidth
+                ? (divRef.current?.clientWidth * 9) / 16
                 : height
             }px`,
             width: `${
-              width > divRef.current.clientWidth
-                ? divRef.current.clientWidth
+              width > divRef.current?.clientWidth
+                ? divRef.current?.clientWidth
                 : width
             }px`,
           }}
