@@ -4,15 +4,20 @@ import Commints from "../Commints/Commints";
 import Banners from "../Banners/Banners";
 import Brand from "../Brand/Brand";
 import PrivateChat from "../PrivateChat/PrivateChat";
+import { ManageSideBarSize } from "../../store/theme";
+import { useDispatch } from "react-redux";
 
 function Sidebar() {
   let [Check, setTap] = useState("Commints");
   let [close, setClose] = useState(false);
+  let dispatch = useDispatch();
   let setCheck = (e) => {
     if (Check === e) {
       setClose(!close);
+      dispatch(ManageSideBarSize(!close));
     } else {
       setClose(false);
+      dispatch(ManageSideBarSize(false));
     }
     setTap(e);
   };

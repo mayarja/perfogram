@@ -199,3 +199,84 @@ export default MainPage;
     height: 100%;
 }
 }
+
+
+    // const containerWidthPercentage = 44.76848958333333; //1536 screen width
+    // const containerWidthPercentage = 48.42168815943728; //1706 screen width
+    // const containerWidthPercentage = 52.03703125; //1920 screen width
+    // const containerWidthPercentage = 54.01224289911851; //2042 screen width
+    // const containerWidthPercentage = 56.88671875; //2304 screen width
+    // const containerWidthPercentage = 62.93977864583333; //3072 screen width
+    // const containerWidthPercentage = 69.00021701388889; //4608 screen width
+    // const containerWidthPercentage = 72.025390625; //6144 screen width
+
+
+
+
+
+ const handleResize = () => {
+      if (divRef.current) {
+        const Height = divRef.current.clientHeight;
+        console.log("Width of div*/*/*/*/*:", Height);
+      }
+      const screenWidth = window.innerWidth;
+      //get sacle
+
+      const currentSacle = generateSacle(screenWidth);
+      const calculatedScale = (screenWidth * currentSacle) / 100;
+      setSacle(calculatedScale);
+
+      //get width box
+      const containerWidthPercentage = getContainerWidthPercentage(screenWidth);
+      const calculatedWidth = (screenWidth * containerWidthPercentage) / 100;
+      const calculatedHeight = (calculatedWidth / 16) * 9;
+      setWidth(calculatedWidth);
+      setHeight(calculatedHeight);
+    };
+
+
+
+
+    const getContainerWidthPercentage = (screenWidth) => {
+      if (screenWidth <= 1536) {
+        return 44.76848958333333;
+      } else if (screenWidth <= 1705) {
+        return 44.76848958333333;
+      } else if (screenWidth <= 1919) {
+        return 48.42168815943728;
+      } else if (screenWidth <= 2042) {
+        return 52.03703125;
+      } else if (screenWidth <= 2301) {
+        return 54.01224289911851;
+      } else if (screenWidth <= 3071) {
+        return 56.88671875;
+      } else if (screenWidth <= 4607.0) {
+        return 62.93977864583333;
+      } else if (screenWidth <= 6143) {
+        return 69.00021701388889;
+      } else {
+        return 72.025390625;
+      }
+    };
+
+    let generateSacle = (screenWidth) => {
+      if (screenWidth <= 1536) {
+        return 0.034975390625;
+      } else if (screenWidth <= 1705) {
+        return 0.034975390625;
+      } else if (screenWidth <= 1919) {
+        return 0.0378294255568581;
+      } else if (screenWidth <= 2042) {
+        return 0.0406539583333333;
+      } else if (screenWidth <= 2301) {
+        return 0.042073583984375;
+      } else if (screenWidth <= 3071) {
+        return 0.0444427083333333;
+      } else if (screenWidth <= 4607.0) {
+        return 0.049171875;
+      } else if (screenWidth <= 6143) {
+        return 0.0539064670138889;
+      } else {
+        return 0.0562698567708333;
+      }
+    };

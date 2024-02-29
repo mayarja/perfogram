@@ -11,6 +11,7 @@ let themeslice = createSlice({
     cam: true,
     stopMicCam: false,
     startStatus: true,
+    sideBarStatus: false,
   },
   reducers: {
     getTheme: (state, action) => {
@@ -37,6 +38,9 @@ let themeslice = createSlice({
     MangeStart: (state, action) => {
       state.startStatus = action.payload;
     },
+    ManageSideBarSize: (state, action) => {
+      state.sideBarStatus = action.payload;
+    },
   },
 });
 
@@ -50,4 +54,5 @@ export let {
   CamStatus,
   StopCameraMic,
   MangeStart,
+  ManageSideBarSize,
 } = themeslice.actions;
