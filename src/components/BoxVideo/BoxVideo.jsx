@@ -74,7 +74,18 @@ function BoxVideo() {
         {/**Box Of Video */}
         <div
           className="box-conatiner"
-          style={{ height: `${height}px`, width: `${width}px` }}
+          style={{
+            height: `${
+              width > divRef.current.clientWidth
+                ? (divRef.current.clientWidth * 9) / 16
+                : height
+            }px`,
+            width: `${
+              width > divRef.current.clientWidth
+                ? divRef.current.clientWidth
+                : width
+            }px`,
+          }}
         >
           <div className="box-conatiner1">
             <div className="box-conatiner2">
