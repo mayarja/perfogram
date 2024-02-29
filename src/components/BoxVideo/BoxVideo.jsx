@@ -27,7 +27,7 @@ function BoxVideo() {
         const newHeight = divRef.current.clientHeight; // Adjust based on your needs
         setHeight(newHeight);
         setWidth((newHeight * 16) / 9);
-      }, 1000); // Short delay to allow measurement
+      }, 500); // Short delay to allow measurement
     }
   };
 
@@ -36,10 +36,10 @@ function BoxVideo() {
       setHeight(0);
       setWidth(0);
       setTimeout(() => {
-        const newHeight = divRef.current.clientHeight - 5; // Adjust based on your needs
+        const newHeight = divRef.current.clientHeight; // Adjust based on your needs
         setHeight(newHeight);
         setWidth((newHeight * 16) / 9);
-      }, 1000); // Short delay to allow measurement
+      }, 500); // Short delay to allow measurement
     }
   };
 
