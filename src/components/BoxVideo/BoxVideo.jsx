@@ -52,7 +52,7 @@ function BoxVideo() {
 
     // Cleanup function to remove event listener
     return () => window.removeEventListener("resize", handleResize);
-  }, [divRef]); // Empty dependency array for initial call only
+  }, []);
 
   const screenWidth = window.innerWidth;
   useEffect(() => {
@@ -60,17 +60,13 @@ function BoxVideo() {
     if (screenWidth <= 1199) {
       ResizeBySideBar();
     }
-  }, [sideBarStatus, divRef]); // Only called when sideBarStatus changes
+  }, [sideBarStatus]); // Only called when sideBarStatus changes
 
   let [check, setCheck] = useState("one");
 
   return (
     <Fragment>
-      <div
-        className="bibibig"
-        ref={divRef}
-        style={{ flex: height ? "0 0 auto" : "26 auto" }}
-      >
+      <div className="bibibig" ref={divRef} style={{ flex: "25 auto" }}>
         {/**Box Of Video */}
         <div
           className="box-conatiner"
@@ -95,8 +91,8 @@ function BoxVideo() {
               autoPlay
               playsInline
               preload="metadata"
-            ></video> */}
-              <img src={img1} alt="..." />
+            ></video> 
+              <img src={img1} alt="..." />*/}
             </div>
             {theme === "Bubble" && title.title ? (
               <div className="them-box">
