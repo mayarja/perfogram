@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/streamYard/static/css/main.798fa1ed.css",
-    "main.js": "/streamYard/static/js/main.07017858.js",
+    "main.css": "/streamYard/static/css/main.bbd1100f.css",
+    "main.js": "/streamYard/static/js/main.897a6882.js",
     "static/media/about-1.jpg": "/streamYard/static/media/about-1.73f95a7b91a6a06088b1.jpg",
     "static/media/videoBack.mp4": "/streamYard/static/media/videoBack.f8cc5d6e8f2ec896cce0.mp4",
     "static/media/logo-start.svg": "/streamYard/static/media/logo-start.f03aded2a495c253eef1896e22147302.svg",
     "static/media/logo.svg": "/streamYard/static/media/logo.98b515c50c4d39ed79a77b070a33cb20.svg",
     "index.html": "/streamYard/index.html",
-    "main.798fa1ed.css.map": "/streamYard/static/css/main.798fa1ed.css.map",
-    "main.07017858.js.map": "/streamYard/static/js/main.07017858.js.map"
+    "main.bbd1100f.css.map": "/streamYard/static/css/main.bbd1100f.css.map",
+    "main.897a6882.js.map": "/streamYard/static/js/main.897a6882.js.map"
   },
   "entrypoints": [
-    "static/css/main.798fa1ed.css",
-    "static/js/main.07017858.js"
+    "static/css/main.bbd1100f.css",
+    "static/js/main.897a6882.js"
   ]
 }
