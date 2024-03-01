@@ -10,6 +10,7 @@ function BoxVideo() {
   const [height, setHeight] = useState(0); // Default height
   const [width, setWidth] = useState(0); // Default width
   const [sacle, setSacle] = useState(0); // Default width
+  const [heightFromStart, setHeightFromStart] = useState(window.innerHeight);
   const divRef = useRef(null);
   const childRef = useRef(null);
   const [prevHeight, setPrevHeight] = useState(0); // Store the previous height
@@ -18,10 +19,27 @@ function BoxVideo() {
     (state) => state.themeslice
   );
 
+  console.log("heightFromStart outsid", heightFromStart);
+
   const handleResize = () => {
     if (divRef.current) {
-      setHeight(screenWidth <= 1199 ? 100 : 140);
-      setWidth(screenWidth <= 1199 ? 100 : 250);
+      const newHeight = divRef.current.clientHeight; // Get the new height
+      const newWidth = divRef.current.clientWidth; // Get the new height
+
+      const newHeightChild = childRef.current?.clientHeight; // Get the new height
+      const newWidthChild = childRef.current?.clientWidth; // Get the new height
+      const screenWidthLive = window.innerWidth;
+      const screenHightLive = window.innerHeight;
+      console.log("heightFromStart inininin", heightFromStart);
+      console.log("screenWidth > 1500", screenWidth);
+      if (
+        newWidthChild >= newWidth ||
+        screenWidthLive > 1532 ||
+        heightFromStart !== screenHightLive
+      ) {
+        setHeight(screenWidthLive <= 1199 ? 100 : 112.5);
+        setWidth(screenWidthLive <= 1199 ? 100 : 200);
+      }
       setTimeout(() => {
         const newHeight = divRef.current.clientHeight; // Adjust based on your needs
         setHeight(newHeight);
@@ -32,8 +50,8 @@ function BoxVideo() {
 
   const ResizeBySideBar = () => {
     if (divRef.current) {
-      setHeight(0);
-      setWidth(0);
+      setHeight(100);
+      setWidth(100);
       setTimeout(() => {
         const newHeight = divRef.current.clientHeight; // Adjust based on your needs
         setHeight(newHeight);
