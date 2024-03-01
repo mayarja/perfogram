@@ -11,9 +11,8 @@ function BoxVideo() {
   const [width, setWidth] = useState(0); // Default width
   const [sacle, setSacle] = useState(0); // Default width
   const divRef = useRef(null);
-
-  console.log("width (initial) ===", width);
-  console.log("height (initial) ===", height);
+  const childRef = useRef(null);
+  const [prevHeight, setPrevHeight] = useState(0); // Store the previous height
 
   let { theme, title, color, ticker, sideBarStatus } = useSelector(
     (state) => state.themeslice
@@ -21,8 +20,8 @@ function BoxVideo() {
 
   const handleResize = () => {
     if (divRef.current) {
-      setHeight(0);
-      setWidth(0);
+      setHeight(screenWidth <= 1199 ? 100 : 140);
+      setWidth(screenWidth <= 1199 ? 100 : 250);
       setTimeout(() => {
         const newHeight = divRef.current.clientHeight; // Adjust based on your needs
         setHeight(newHeight);
@@ -70,6 +69,7 @@ function BoxVideo() {
         {/**Box Of Video */}
         <div
           className="box-conatiner"
+          ref={childRef}
           style={{
             height: `${
               width > divRef.current?.clientWidth

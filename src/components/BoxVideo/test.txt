@@ -279,4 +279,86 @@ export default MainPage;
       } else {
         return 0.0562698567708333;
       }
-    };
+    };.
+
+
+
+
+
+    /// VERSION 2 
+
+
+      const [height, setHeight] = useState(0); // Default height
+  const [width, setWidth] = useState(0); // Default width
+  const [sacle, setSacle] = useState(0); // Default width
+  const divRef = useRef(null);
+  const childRef = useRef(null);
+  const [prevHeight, setPrevHeight] = useState(0); // Store the previous height
+
+  let { theme, title, color, ticker, sideBarStatus } = useSelector(
+    (state) => state.themeslice
+  );
+
+  const handleResize = () => {
+    console.log("test test test");
+    if (divRef.current) {
+      const newHeight = divRef.current.clientHeight; // Get the new height
+      const newWidth = divRef.current.clientWidth; // Get the new height
+
+      const newHeightChild = childRef.current?.clientHeight; // Get the new height
+      const newWidthChild = childRef.current?.clientWidth; // Get the new height
+      console.log("newHeight inside", newHeight);
+      console.log("newWidth inside", newWidth);
+      console.log("/*/*/*/*/*//*/*/*");
+
+      console.log("newHeightChild", newHeightChild);
+      console.log("newWidthChild", newWidthChild);
+
+      // setHeight(0);
+      // setWidth(0);
+      setTimeout(() => {
+        if (newWidthChild >= newWidth) {
+          setHeight((newWidth * 9) / 16); // Update the height state
+          setWidth(newWidth); // Update the width state
+        } else {
+          setHeight(newHeight); // Update the height state
+          setWidth((newHeight * 16) / 9); // Update the width state
+        }
+        // Check if the height has changed
+        // setPrevHeight(newHeight); // Update the previous height
+        // setHeight(newHeight); // Update the height state
+        // setWidth((newHeight * 16) / 9); // Update the width state
+      }, 500); // Short delay to allow measurement
+    }
+  };
+
+  useEffect(() => {
+    // Call handleResize initially
+    handleResize();
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup function to remove event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const ResizeBySideBar = () => {
+    if (divRef.current) {
+      setHeight(0);
+      setWidth(0);
+      setTimeout(() => {
+        const newHeight = divRef.current.clientHeight; // Adjust based on your needs
+        setHeight(newHeight);
+        setWidth((newHeight * 16) / 9);
+      }, 500); // Short delay to allow measurement
+    }
+  };
+
+  const screenWidth = window.innerWidth;
+  useEffect(() => {
+    // Call handleResize when sideBarStatus changes
+    if (screenWidth <= 1199) {
+      ResizeBySideBar();
+    }
+  }, [sideBarStatus]); // Only called when sideBarStatus changes
