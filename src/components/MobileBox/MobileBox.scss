@@ -1,0 +1,140 @@
+.mobile-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  @media screen and (max-width: 576px) {
+    display: flex !important;
+  }
+  .list-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(27, 31, 41, 0.2);
+    padding: 6px 5px 0px 5px;
+    width: 100%;
+    .box-item {
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      padding-bottom: 5px;
+      span {
+        margin: 0px;
+        color: rgb(79, 84, 97);
+        font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+          sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.6;
+        flex: 0 0 auto;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        background-color: rgb(20, 97, 225);
+        width: 0;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    .active {
+      span {
+        color: rgb(20, 97, 225);
+      }
+      &::after {
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  .box-result {
+    position: relative;
+    height: 100%;
+    flex: 1 1;
+    width: 100%;
+  }
+  .wrapper-result {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .box-content {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 60px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    .AccordionBrand {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .privateChat .BoxSend {
+      padding: 0px 12px 0px;
+    }
+  }
+  .action-settings {
+    background: rgb(255, 255, 255);
+    z-index: 4;
+    width: 96%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid rgba(27, 31, 41, 0.2);
+    margin: auto;
+
+    .box-action {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow-x: auto;
+      .active {
+        background-color: rgba(218, 56, 27, 0.15) !important;
+        svg {
+          fill: rgb(218, 56, 27);
+        }
+        i {
+          color: rgb(218, 56, 27) !important;
+        }
+      }
+      .box-icon {
+        min-width: 80px;
+        height: 56px;
+        padding: 4px 8px;
+        overflow: hidden;
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        -webkit-box-pack: end;
+        justify-content: flex-end;
+        -webkit-box-align: center;
+        align-items: center;
+        user-select: none;
+        text-decoration: none;
+        background-color: rgb(255, 255, 255);
+        transition: background 0.32s ease 0s;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(245, 245, 245);
+        }
+        i {
+          color: rgb(79, 84, 97);
+          font-size: 20px;
+        }
+        span {
+          margin: 0px;
+          color: rgb(79, 84, 97);
+          font-family: "Noto Sans JP", Prompt, sans-serif !important;
+          font-size: 1.3rem;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}

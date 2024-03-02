@@ -5,6 +5,7 @@ import BoxVideo from "../../components/BoxVideo/BoxVideo";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import UnderStage from "../../components/UnderStage/UnderStage";
 import SettingBar from "../../components/SettingBar/SettingBar";
+import MobileBox from "../../components/MobileBox/MobileBox";
 
 function MainPage() {
   return (
@@ -16,6 +17,7 @@ function MainPage() {
             <BoxVideo />
             <UnderStage />
             <SettingBar />
+            <MobileBox />
           </div>
         </div>
         <Sidebar />

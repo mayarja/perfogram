@@ -22,7 +22,7 @@ function SettingBar() {
   };
 
   return (
-    <div className="SettingBar">
+    <div className="SettingBar d-none d-sm-block">
       <div className="wrapper-one">
         <div className="wrapper-two">
           <div className="conatiner-box">

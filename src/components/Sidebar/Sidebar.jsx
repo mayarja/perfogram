@@ -22,7 +22,10 @@ function Sidebar() {
     setTap(e);
   };
   return (
-    <div className="box-setting" style={{ width: close ? "74px" : "460px" }}>
+    <div
+      className="box-setting d-none d-sm-block"
+      style={{ width: close ? "74px" : "460px" }}
+    >
       <div className="wrapper">
         <div className="box-icon">
           <div className="icons-wrap">

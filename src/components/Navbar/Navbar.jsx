@@ -3,7 +3,7 @@ import "./Navbar.scss";
 import img1 from "../../assits/logo.svg";
 function Navbar() {
   return (
-    <div className="mian-nav">
+    <div className="mian-nav d-none d-sm-block">
       <div className="header-inner">
         <div className="img-name">
           <div className="img-box">

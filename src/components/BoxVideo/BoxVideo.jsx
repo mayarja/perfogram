@@ -92,7 +92,14 @@ function BoxVideo() {
 
   return (
     <Fragment>
-      <div className="bibibig" ref={divRef} style={{ flex: "25 auto" }}>
+      <div
+        className="bibibig"
+        ref={divRef}
+        style={{
+          flex: "25 auto",
+          height: screenWidth <= 576 ? (screenWidth / 16) * 9 : "TEST",
+        }}
+      >
         {/**Box Of Video */}
         <div
           className="box-conatiner"
@@ -197,7 +204,7 @@ function BoxVideo() {
       </div>
 
       {/*Button actions foe edit on video box */}
-      <div className="box-btns">
+      <div className="box-btns d-none d-sm-block">
         <div className="icnons-control">
           <div className="icnons-control2">
             <div className="icnons-control3">

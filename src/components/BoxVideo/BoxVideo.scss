@@ -8,6 +8,12 @@
   -webkit-box-pack: center;
   justify-content: center;
 }
+@media screen and (max-width: 576px) {
+  .bibibig {
+    flex: 0 0 auto !important;
+    width: 100%;
+  }
+}
 .box-conatiner {
   transition: width 300ms ease 0s, height 300ms ease 0s;
   display: flex;
