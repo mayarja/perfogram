@@ -11,6 +11,7 @@ function BoxVideo() {
   const [width, setWidth] = useState(0); // Default width
   const [sacle, setSacle] = useState(0); // Default width
   const [heightFromStart, setHeightFromStart] = useState(window.innerHeight);
+  const [widtFromStart, setWidtFromStart] = useState(window.innerWidth);
   const divRef = useRef(null);
   const childRef = useRef(null);
   const [prevHeight, setPrevHeight] = useState(0); // Store the previous height
@@ -19,7 +20,10 @@ function BoxVideo() {
     (state) => state.themeslice
   );
 
-  console.log("heightFromStart outsid", heightFromStart);
+  let generateSacle = (currentHight) => {
+    let scale = (0.1395348051948052 * currentHight) / 100;
+    return scale;
+  };
 
   const handleResize = () => {
     if (divRef.current) {
@@ -30,18 +34,21 @@ function BoxVideo() {
       const newWidthChild = childRef.current?.clientWidth; // Get the new height
       const screenWidthLive = window.innerWidth;
       const screenHightLive = window.innerHeight;
-      console.log("heightFromStart inininin", heightFromStart);
-      console.log("screenWidth > 1500", screenWidth);
+
       if (
         newWidthChild >= newWidth ||
-        screenWidthLive > 1532 ||
-        heightFromStart !== screenHightLive
+        screenWidthLive > widtFromStart ||
+        Math.abs(heightFromStart - screenHightLive) > 10
       ) {
         setHeight(screenWidthLive <= 1199 ? 100 : 112.5);
         setWidth(screenWidthLive <= 1199 ? 100 : 200);
       }
+
       setTimeout(() => {
         const newHeight = divRef.current.clientHeight; // Adjust based on your needs
+        console.log("newHeightnewHeight", newHeight);
+        let scaleValue = generateSacle(newHeight);
+        setSacle(scaleValue);
         setHeight(newHeight);
         setWidth((newHeight * 16) / 9);
       }, 500); // Short delay to allow measurement
@@ -54,6 +61,8 @@ function BoxVideo() {
       setWidth(100);
       setTimeout(() => {
         const newHeight = divRef.current.clientHeight; // Adjust based on your needs
+        let scaleValue = generateSacle(newHeight);
+        setSacle(scaleValue);
         setHeight(newHeight);
         setWidth((newHeight * 16) / 9);
       }, 500); // Short delay to allow measurement
