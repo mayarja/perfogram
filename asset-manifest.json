@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/streamYard/static/css/main.4c5ca2b2.css",
-    "main.js": "/streamYard/static/js/main.f31f8dcc.js",
+    "main.css": "/streamYard/static/css/main.052aee0a.css",
+    "main.js": "/streamYard/static/js/main.7d608ac0.js",
     "static/media/about-1.jpg": "/streamYard/static/media/about-1.73f95a7b91a6a06088b1.jpg",
     "static/media/videoBack.mp4": "/streamYard/static/media/videoBack.f8cc5d6e8f2ec896cce0.mp4",
     "static/media/logo-start.svg": "/streamYard/static/media/logo-start.f03aded2a495c253eef1896e22147302.svg",
     "static/media/logo.svg": "/streamYard/static/media/logo.98b515c50c4d39ed79a77b070a33cb20.svg",
     "index.html": "/streamYard/index.html",
-    "main.4c5ca2b2.css.map": "/streamYard/static/css/main.4c5ca2b2.css.map",
-    "main.f31f8dcc.js.map": "/streamYard/static/js/main.f31f8dcc.js.map"
+    "main.052aee0a.css.map": "/streamYard/static/css/main.052aee0a.css.map",
+    "main.7d608ac0.js.map": "/streamYard/static/js/main.7d608ac0.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c5ca2b2.css",
-    "static/js/main.f31f8dcc.js"
+    "static/css/main.052aee0a.css",
+    "static/js/main.7d608ac0.js"
   ]
 }
