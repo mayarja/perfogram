@@ -72,7 +72,7 @@ function UnderStage() {
   };
 
   return (
-    <div className="understage d-none d-sm-block">
+    <div className="understage d-none d-sm-flex">
       <div className="wrpaer-understage">
         <div className="box-conatiner-2">
           {/*Box Fro user details and image */}

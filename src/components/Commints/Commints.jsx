@@ -1,7 +1,7 @@
 import React from "react";
 
 function Commints() {
-  return <div>Commints</div>;
+  return <div>Comments</div>;
 }
 
 export default Commints;

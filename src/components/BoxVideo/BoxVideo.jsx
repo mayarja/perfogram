@@ -29,7 +29,7 @@ function BoxVideo() {
     if (divRef.current) {
       const newHeight = divRef.current.clientHeight; // Get the new height
       const newWidth = divRef.current.clientWidth; // Get the new height
-
+      console.log("sideBarStatus==>", sideBarStatus);
       const newHeightChild = childRef.current?.clientHeight; // Get the new height
       const newWidthChild = childRef.current?.clientWidth; // Get the new height
       const screenWidthLive = window.innerWidth;
@@ -204,7 +204,7 @@ function BoxVideo() {
       </div>
 
       {/*Button actions foe edit on video box */}
-      <div className="box-btns d-none d-sm-block">
+      <div className="box-btns d-none d-sm-flex">
         <div className="icnons-control">
           <div className="icnons-control2">
             <div className="icnons-control3">

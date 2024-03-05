@@ -3,6 +3,8 @@ import "./SettingBar.scss";
 import { BoxTooltipTitle } from "../ToolTipsFolder/ToolTips";
 import { useDispatch, useSelector } from "react-redux";
 import { CamStatus, MicStatus, StopCameraMic } from "../../store/theme";
+import { Dialog } from "@mui/material";
+import SettingModal from "./SettingModal/SettingModal";
 
 function SettingBar() {
   let { cam, mic } = useSelector((state) => state.themeslice);
@@ -20,6 +22,10 @@ function SettingBar() {
       dispatch(StopCameraMic(false));
     }
   };
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <div className="SettingBar d-none d-sm-block">
@@ -113,7 +119,7 @@ function SettingBar() {
                   <span>Start Cam</span>
                 </div>
               )}
-              <div className="box-icon">
+              <div className="box-icon" onClick={(e) => handleOpen()}>
                 <i className="fa-solid fa-gear"></i>
                 <span>Settings</span>
               </div>
@@ -138,6 +144,18 @@ function SettingBar() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="d-none d-sm-flex">
+        <Dialog
+          maxWidth="md"
+          fullWidth
+          fullScreen={false}
+          open={open}
+          style={{ maxWidth: "700px", margin: "auto" }}
+          onClose={handleClose}
+        >
+          <div className="modal-box">{<SettingModal />}</div>
+        </Dialog>
       </div>
     </div>
   );

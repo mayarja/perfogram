@@ -23,8 +23,7 @@ function Sidebar() {
   };
   return (
     <div
-      className="box-setting d-none d-sm-block"
-      style={{ width: close ? "74px" : "460px" }}
+      className={`box-setting d-none d-sm-block ${close ? "close" : "open"}`}
     >
       <div className="wrapper">
         <div className="box-icon">
