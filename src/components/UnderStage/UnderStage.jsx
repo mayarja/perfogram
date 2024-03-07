@@ -14,6 +14,9 @@ function UnderStage() {
   let data = [
     { name: "Test", img: img1, main: true },
     { name: "Test Two", img: "", main: false },
+    { name: "Test Two", img: "", main: false },
+    { name: "Test Two", img: "", main: false },
+    { name: "Test Two", img: "", main: false },
   ];
 
   const [open, setOpen] = React.useState(false);
@@ -72,7 +75,7 @@ function UnderStage() {
   };
 
   return (
-    <div className="understage d-none d-sm-flex">
+    <div className="understage ">
       <div className="wrpaer-understage">
         <div className="box-conatiner-2">
           {/*Box Fro user details and image */}

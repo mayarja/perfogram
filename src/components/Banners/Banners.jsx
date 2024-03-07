@@ -3,7 +3,6 @@ import "./Banners.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getTicker, getTitle } from "../../store/theme";
 import { BoxTooltipTitle, TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
-import ManageModal from "../ModalsFolder/ManageModal";
 import { Dialog } from "@mui/material";
 import RenameBanner from "./Modal/RenameBanner";
 import DeleteBanner from "./Modal/DeleteBanner";

@@ -2,19 +2,26 @@ import React, { useState } from "react";
 import "./SettingModal.scss";
 import CamerBox from "./CamerBox";
 import General from "./General";
+import AudioBox from "./AudioBox";
+import { useDispatch } from "react-redux";
+import { ManageSettingBox } from "../../../store/theme";
 
 function SettingModal() {
   let [active, setactive] = useState("General");
   let HandleACtive = (e) => {
     setactive(e);
   };
+  let dispatch = useDispatch();
   return (
     <div className="modal-setting">
       <div className="header-setting">
         <div className="wrapper-header">
           <h2>Settings</h2>
         </div>
-        <div className="box-icon">
+        <div
+          className="box-icon"
+          onClick={() => dispatch(ManageSettingBox(false))}
+        >
           <i className="fa-solid fa-xmark" />
         </div>
       </div>
@@ -81,6 +88,8 @@ function SettingModal() {
                 <CamerBox />
               ) : active === "General" ? (
                 <General />
+              ) : active === "Audio" ? (
+                <AudioBox />
               ) : (
                 ""
               )}

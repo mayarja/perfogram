@@ -15,7 +15,9 @@ function MainPage() {
         <div className="box-show row">
           <div className="col-sm-12 box-wraperrr">
             <BoxVideo />
-            <UnderStage />
+            <div className="d-none d-sm-flex">
+              <UnderStage />
+            </div>
             <SettingBar />
             <MobileBox />
           </div>

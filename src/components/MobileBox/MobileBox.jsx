@@ -6,13 +6,24 @@ import Brand from "../Brand/Brand";
 import PrivateChat from "../PrivateChat/PrivateChat";
 import SettingBar from "../SettingBar/SettingBar";
 import { useDispatch, useSelector } from "react-redux";
-import { CamStatus, MicStatus, StopCameraMic } from "../../store/theme";
-import { BoxTooltipTitle } from "../ToolTipsFolder/ToolTips";
+import {
+  CamStatus,
+  ManageSettingBox,
+  ManageShowGest,
+  MangeStart,
+  MicStatus,
+  StopCameraMic,
+} from "../../store/theme";
+import { BoxTooltipTitle, TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
+import GestSmallBox from "./GestSmallBox";
+import UnderStage from "../UnderStage/UnderStage";
 
 function MobileBox() {
   let [activeBox, setActiveBox] = useState("Comments");
 
-  let { cam, mic } = useSelector((state) => state.themeslice);
+  let { cam, mic, settingBox, showGest } = useSelector(
+    (state) => state.themeslice
+  );
   let dispatch = useDispatch();
 
   let ToggleMic = (e) => {
@@ -32,25 +43,37 @@ function MobileBox() {
     <div className="mobile-box d-block d-sm-none">
       <div className="list-actions">
         <div
-          onClick={(e) => setActiveBox("Comments")}
+          onClick={(e) => {
+            setActiveBox("Comments");
+            dispatch(ManageShowGest(false));
+          }}
           className={`box-item ${activeBox === "Comments" && "active"}`}
         >
           <span>Comments</span>
         </div>
         <div
-          onClick={(e) => setActiveBox("Banners")}
+          onClick={(e) => {
+            dispatch(ManageShowGest(false));
+            setActiveBox("Banners");
+          }}
           className={`box-item ${activeBox === "Banners" && "active"}`}
         >
           <span>Banners</span>
         </div>
         <div
-          onClick={(e) => setActiveBox("Brands")}
+          onClick={(e) => {
+            dispatch(ManageShowGest(false));
+            setActiveBox("Brands");
+          }}
           className={`box-item ${activeBox === "Brands" && "active"}`}
         >
           <span>Brands</span>
         </div>
         <div
-          onClick={(e) => setActiveBox("PrivateChat")}
+          onClick={(e) => {
+            dispatch(ManageShowGest(false));
+            setActiveBox("PrivateChat");
+          }}
           className={`box-item ${activeBox === "PrivateChat" && "active"}`}
         >
           <span>PrivateChat</span>
@@ -60,18 +83,25 @@ function MobileBox() {
         <div className="box-result">
           <div className="wrapper-result">
             <div className="box-content">
-              {activeBox === "Comments" ? (
+              {showGest ? (
+                <div className="mobil-understage">
+                  <UnderStage />
+                </div>
+              ) : activeBox === "Comments" ? (
                 <Commints />
               ) : activeBox === "Banners" ? (
                 <Banners />
               ) : activeBox === "Brands" ? (
                 <Brand />
-              ) : (
+              ) : activeBox === "PrivateChat" ? (
                 <PrivateChat />
+              ) : (
+                ""
               )}
             </div>
           </div>
         </div>
+
         <div className="action-settings">
           <div className="box-action">
             {/*Box For Mic */}
@@ -172,15 +202,43 @@ function MobileBox() {
               <span>Present</span>
             </div>
             */}
-            <div className="box-icon">
+            <div
+              className="box-icon"
+              onClick={() => {
+                setActiveBox("");
+                dispatch(ManageShowGest(true));
+              }}
+            >
               <i className="fa-solid fa-users" />
               <span>Guests</span>
             </div>
 
-            <div className="box-icon">
-              <i className="fa-solid fa-ellipsis" />
-              <span>More</span>
-            </div>
+            <TooltipBoxAction
+              title={
+                <ul className="box-action-toltip list-unstyled">
+                  <li
+                    className=""
+                    onClick={() => dispatch(ManageSettingBox(true))}
+                  >
+                    <i className="fa-solid fa-gear" /> <span>General</span>
+                  </li>
+                  <li className="" onClick={() => dispatch(MangeStart(true))}>
+                    <i
+                      className="fa-solid fa-circle-xmark"
+                      style={{ color: "red" }}
+                    />
+                    <span>Leave Studio</span>
+                  </li>
+                </ul>
+              }
+              status={settingBox}
+            >
+              <div className="box-icon">
+                <i className="fa-solid fa-ellipsis" />
+                <span>More</span>
+                <label>2</label>
+              </div>
+            </TooltipBoxAction>
             {/*
              <div className="box-icon">
               <i className="fa-solid fa-user-plus" />
