@@ -85,7 +85,9 @@ function MobileBox() {
             <div className="box-content">
               {showGest ? (
                 <div className="mobil-understage">
-                  <UnderStage />
+                  <div className="understage">
+                    <UnderStage />
+                  </div>
                 </div>
               ) : activeBox === "Comments" ? (
                 <Commints />
