@@ -17,6 +17,7 @@ import {
 import { BoxTooltipTitle, TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
 import GestSmallBox from "./GestSmallBox";
 import UnderStage from "../UnderStage/UnderStage";
+import Viwers from "../Viwers/Viwers";
 
 function MobileBox() {
   let [activeBox, setActiveBox] = useState("Comments");
@@ -97,6 +98,8 @@ function MobileBox() {
                 <Brand />
               ) : activeBox === "PrivateChat" ? (
                 <PrivateChat />
+              ) : activeBox === "Viwers" ? (
+                <Viwers />
               ) : (
                 ""
               )}
@@ -222,7 +225,16 @@ function MobileBox() {
                     className=""
                     onClick={() => dispatch(ManageSettingBox(true))}
                   >
-                    <i className="fa-solid fa-gear" /> <span>General</span>
+                    <i className="fa-solid fa-gear" /> <span>Settings</span>
+                  </li>
+                  <li
+                    className=""
+                    onClick={() => {
+                      dispatch(ManageShowGest(false));
+                      setActiveBox("Viwers");
+                    }}
+                  >
+                    <i className="fa-solid fa-users" /> <span>Viwers</span>
                   </li>
                   <li className="" onClick={() => dispatch(MangeStart(true))}>
                     <i
@@ -238,7 +250,7 @@ function MobileBox() {
               <div className="box-icon">
                 <i className="fa-solid fa-ellipsis" />
                 <span>More</span>
-                <label>2</label>
+                <label>3</label>
               </div>
             </TooltipBoxAction>
             {/*

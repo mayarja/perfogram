@@ -1,13 +1,14 @@
 import React from "react";
 import "./Navbar.scss";
 import img1 from "../../assits/logo.svg";
+import img2 from "../../assits/Perfogram_Logo_TransparentBG.png";
 function Navbar() {
   return (
     <div className="mian-nav d-none d-sm-block">
       <div className="header-inner">
         <div className="img-name">
           <div className="img-box">
-            <img src={img1} alt="..." />
+            <img src={img2} alt="..." />
           </div>
           <span>Test</span>
         </div>

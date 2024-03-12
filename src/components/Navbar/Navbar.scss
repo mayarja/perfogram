@@ -1,110 +1,113 @@
-.mian-nav{
-    flex: 0 1 0%;
-    position: relative;
-    border-bottom: 1px solid rgba(27, 31, 41, 0.2);
-    z-index: 2;
-    background-color: rgb(255, 255, 255);
-    .header-inner{
-        width: 100%;
-        height: 56px;
+.mian-nav {
+  flex: 0 1 0%;
+  position: relative;
+  border-bottom: 1px solid rgba(27, 31, 41, 0.2);
+  z-index: 2;
+  background-color: rgb(255, 255, 255);
+  .header-inner {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 16px 0px 24px;
+    justify-content: space-between;
+    .img-name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      .img-box {
+        height: 100%;
+        width: 118px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      span {
+        margin: 0px;
+        color: rgb(79, 84, 97);
+        font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+          sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+    }
+    .redcord {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .title {
+        margin: 2px 16px 2px 0px;
         display: flex;
         -webkit-box-align: center;
         align-items: center;
-        padding: 0px 16px 0px 24px;
-        justify-content: space-between;
-        .img-name{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            .img-box{
-                    height: 40px;
-                    width: 40px; 
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-            span{
-                margin: 0px;
-                color: rgb(79, 84, 97);
-                font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt, sans-serif;
-                font-size: 1.4rem;
-                font-weight: 400;
-                line-height: 1.6;
-            }
+        gap: 10px;
+        span {
+          margin: 0px;
+          color: rgb(105, 110, 124);
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+            sans-serif;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.6;
         }
-        .redcord{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            .title{
-                margin: 2px 16px 2px 0px;
-                display: flex;
-                -webkit-box-align: center;
-                align-items: center;
-                gap: 10px;
-                span{
-                    margin: 0px;
-                    color: rgb(105, 110, 124);
-                    font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt, sans-serif;
-                    font-size: 1.4rem;
-                    font-weight: 400;
-                    line-height: 1.6;
-                }
-                .edit{
-                    color: rgb(20, 97, 225);
-                    padding: 5px 8px;
-                    border-radius: 5px;
-                    transition: background 0.2s ease 0s, border-color 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease 0s;
-                    cursor: pointer;
-                    font-size: 1.49rem;
-                    font-weight: 500;
-                    line-height: 1.4;
-                    display: flex;
-                    -webkit-box-align: center;
-                    align-items: center;
-                    opacity: 1;
-                    &:hover{
-                        color: rgb(14, 67, 155);
-                        background-color: rgba(20, 97, 225, 0.2);
-                    }
-                }
-            }
-            button{
-                display: inline-flex;
-                height: 39px;
-                -webkit-box-align: center;
-                align-items: center;
-                -webkit-box-pack: center;
-                justify-content: center;
-                position: relative;
-                text-align: center;
-                overflow-wrap: break-word;
-                overflow: hidden;
-                border-radius: 4px;
-                text-decoration: none;
-                transition: background 0.2s ease 0s, border-color 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease 0s;
-                color: rgb(255, 255, 255);
-                background-color: rgb(20, 97, 225);
-                padding: 0px 16px;
-                text{
-                    font-family: "Noto Sans JP", Prompt, sans-serif;
-                    font-size: 1.4rem;
-                    font-weight: 600;
-                    line-height: 1.4;
-                    display: flex;
-                    -webkit-box-align: center;
-                    align-items: center;
-                    opacity: 1;
-                    color: rgb(255, 255, 255);
-                }
-                &:hover{
-                    background-color: rgb(17, 81, 188);
-                }
-              
-            }
+        .edit {
+          color: rgb(20, 97, 225);
+          padding: 5px 8px;
+          border-radius: 5px;
+          transition: background 0.2s ease 0s, border-color 0.2s ease 0s,
+            color 0.2s ease 0s, opacity 0.2s ease 0s;
+          cursor: pointer;
+          font-size: 1.49rem;
+          font-weight: 500;
+          line-height: 1.4;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          opacity: 1;
+          &:hover {
+            color: rgb(14, 67, 155);
+            background-color: rgba(20, 97, 225, 0.2);
+          }
         }
+      }
+      button {
+        display: inline-flex;
+        height: 39px;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background 0.2s ease 0s, border-color 0.2s ease 0s,
+          color 0.2s ease 0s, opacity 0.2s ease 0s;
+        color: rgb(255, 255, 255);
+        background-color: rgb(20, 97, 225);
+        padding: 0px 16px;
+        text {
+          font-family: "Noto Sans JP", Prompt, sans-serif;
+          font-size: 1.4rem;
+          font-weight: 600;
+          line-height: 1.4;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          opacity: 1;
+          color: rgb(255, 255, 255);
+        }
+        &:hover {
+          background-color: rgb(17, 81, 188);
+        }
+      }
     }
+  }
 }

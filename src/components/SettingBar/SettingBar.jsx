@@ -1,9 +1,10 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./SettingBar.scss";
-import { BoxTooltipTitle } from "../ToolTipsFolder/ToolTips";
+import { BoxTooltipTitle, TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
 import { useDispatch, useSelector } from "react-redux";
 import {
   CamStatus,
+  ManageControlStatus,
   ManageSettingBox,
   MicStatus,
   StopCameraMic,
@@ -13,7 +14,9 @@ import SettingModal from "./SettingModal/SettingModal";
 import SettingBigBox from "./SettingModal/SettingBigBox";
 
 function SettingBar() {
-  let { cam, mic, settingBox } = useSelector((state) => state.themeslice);
+  let { cam, mic, settingBox, status } = useSelector(
+    (state) => state.themeslice
+  );
   let dispatch = useDispatch();
 
   let ToggleMic = (e) => {
@@ -54,97 +57,122 @@ function SettingBar() {
 
   return (
     <Fragment>
-      <div className="SettingBar d-none d-sm-block">
+      <div className="SettingBar d-none d-sm-block m-1">
         <div className="wrapper-one">
           <div className="wrapper-two">
             <div className="conatiner-box">
               <div className="box-action">
                 {/*Box For Mic */}
-                {mic ? (
-                  <div
-                    className="box-icon"
-                    onClick={(e) => {
-                      ToggleMic(false);
-                    }}
-                  >
-                    <BoxTooltipTitle
-                      placement="top"
-                      backgroundColor="rgb(27, 31, 41)"
-                      title={
-                        <span className="titleWithButtons">
-                          Press <text>CRTL</text> + <text>D</text>
-                        </span>
-                      }
-                    >
-                      <i className="fa-solid fa-microphone" />
-                    </BoxTooltipTitle>
-                    <span>Mute</span>
-                  </div>
-                ) : (
-                  <div
-                    className="box-icon active"
-                    onClick={(e) => {
-                      ToggleMic(true);
-                    }}
-                  >
-                    <BoxTooltipTitle
-                      placement="top"
-                      backgroundColor="rgb(27, 31, 41)"
-                      title={
-                        <span className="titleWithButtons">
-                          Press <text>CRTL</text> + <text>D</text>
-                        </span>
-                      }
-                    >
-                      <i className="fa-solid fa-microphone-slash" />
-                    </BoxTooltipTitle>
-                    <span>Unmute</span>
-                  </div>
+                {status !== "viwer" && (
+                  <Fragment>
+                    {mic ? (
+                      <div
+                        className="box-icon"
+                        onClick={(e) => {
+                          ToggleMic(false);
+                        }}
+                      >
+                        <BoxTooltipTitle
+                          placement="top"
+                          backgroundColor="rgb(27, 31, 41)"
+                          title={
+                            <span className="titleWithButtons">
+                              Press <text>CRTL</text> + <text>D</text>
+                            </span>
+                          }
+                        >
+                          <i className="fa-solid fa-microphone" />
+                        </BoxTooltipTitle>
+                        <span>Mute</span>
+                      </div>
+                    ) : (
+                      <div
+                        className="box-icon active"
+                        onClick={(e) => {
+                          ToggleMic(true);
+                        }}
+                      >
+                        <BoxTooltipTitle
+                          placement="top"
+                          backgroundColor="rgb(27, 31, 41)"
+                          title={
+                            <span className="titleWithButtons">
+                              Press <text>CRTL</text> + <text>D</text>
+                            </span>
+                          }
+                        >
+                          <i className="fa-solid fa-microphone-slash" />
+                        </BoxTooltipTitle>
+                        <span>Unmute</span>
+                      </div>
+                    )}
+                  </Fragment>
                 )}
 
                 {/*Box For cam */}
 
-                {cam ? (
-                  <div
-                    className="box-icon"
-                    onClick={(e) => {
-                      ToggleCam(false);
-                    }}
-                  >
-                    <BoxTooltipTitle
-                      placement="top"
-                      backgroundColor="rgb(27, 31, 41)"
-                      title={
-                        <span className="titleWithButtons">
-                          Press <text>CRTL</text> + <text>E</text>
-                        </span>
-                      }
-                    >
-                      <i className="fa-solid fa-video" />
-                    </BoxTooltipTitle>
-                    <span>Stop Cam</span>
-                  </div>
-                ) : (
-                  <div
-                    className="box-icon active"
-                    onClick={(e) => {
-                      ToggleCam(true);
-                    }}
-                  >
-                    <BoxTooltipTitle
-                      placement="top"
-                      backgroundColor="rgb(27, 31, 41)"
-                      title={
-                        <span className="titleWithButtons">
-                          Press <text>CRTL</text> + <text>E</text>
-                        </span>
-                      }
-                    >
-                      <i className="fa-solid fa-video-slash" />
-                    </BoxTooltipTitle>
-                    <span>Start Cam</span>
+                {status !== "viwer" && (
+                  <Fragment>
+                    {cam ? (
+                      <div
+                        className="box-icon"
+                        onClick={(e) => {
+                          ToggleCam(false);
+                        }}
+                      >
+                        <BoxTooltipTitle
+                          placement="top"
+                          backgroundColor="rgb(27, 31, 41)"
+                          title={
+                            <span className="titleWithButtons">
+                              Press <text>CRTL</text> + <text>E</text>
+                            </span>
+                          }
+                        >
+                          <i className="fa-solid fa-video" />
+                        </BoxTooltipTitle>
+                        <span>Stop Cam</span>
+                      </div>
+                    ) : (
+                      <div
+                        className="box-icon active"
+                        onClick={(e) => {
+                          ToggleCam(true);
+                        }}
+                      >
+                        <BoxTooltipTitle
+                          placement="top"
+                          backgroundColor="rgb(27, 31, 41)"
+                          title={
+                            <span className="titleWithButtons">
+                              Press <text>CRTL</text> + <text>E</text>
+                            </span>
+                          }
+                        >
+                          <i className="fa-solid fa-video-slash" />
+                        </BoxTooltipTitle>
+                        <span>Start Cam</span>
+                      </div>
+                    )}
+                  </Fragment>
+                )}
+
+                {/*start Box For Viwer Only  */}
+                {status === "viwer" && (
+                  <div className="box-icon">
+                    <i className="fa-solid fa-heart" />
+                    <span>Love</span>
                   </div>
                 )}
+                {status === "viwer" && (
+                  <div className="box-icon">
+                    <i className="fa-solid fa-hand" />
+                    <span>Intervention</span>
+                  </div>
+                )}
+                {/*start Box For Viwer Only  */}
+
+                {/*Box For setting */}
                 <div
                   className="box-icon"
                   onClick={(e) => handleOpenSetting("open")}
@@ -152,14 +180,23 @@ function SettingBar() {
                   <i className="fa-solid fa-gear"></i>
                   <span>Settings</span>
                 </div>
-                <div className="box-icon">
-                  <i className="fa-solid fa-desktop" />
-                  <span>Present</span>
-                </div>
-                <div className="box-icon">
-                  <i className="fa-solid fa-user-plus" />
-                  <span>Invite</span>
-                </div>
+
+                {/*Box For Present */}
+                {status !== "viwer" && (
+                  <div className="box-icon">
+                    <i className="fa-solid fa-desktop" />
+                    <span>Present</span>
+                  </div>
+                )}
+
+                {/*Box For Invite */}
+                {status !== "viwer" && (
+                  <div className="box-icon">
+                    <i className="fa-solid fa-user-plus" />
+                    <span>Invite</span>
+                  </div>
+                )}
+
                 <div className="box-icon">
                   <i
                     className="fa-solid fa-circle-xmark"
@@ -168,9 +205,11 @@ function SettingBar() {
                   <span>Leave Studio</span>
                 </div>
               </div>
-              <div className="box-question">
+              {/*
+                      <div className="box-question">
                 <span className="question">Having issues</span>
               </div>
+            */}
             </div>
           </div>
         </div>

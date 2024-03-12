@@ -1,14 +1,16 @@
 import React from "react";
 import "./StartPage.scss";
-import img1 from "../../assits/logo-start.svg";
+// import img1 from "../../assits/logo-start.svg";
+import img1 from "../../assits/Perfogram_Logo_TransparentBG.png";
 import img2 from "../../assits/videoBack.mp4";
 import { useDispatch } from "react-redux";
-import { MangeStart } from "../../store/theme";
+import { ManageControlStatus, MangeStart } from "../../store/theme";
 function StartPage() {
   let dispatch = useDispatch();
 
   let GoToVideoCall = (e) => {
     e.preventDefault();
+    dispatch(ManageControlStatus("modifier"));
     dispatch(MangeStart(false));
   };
 
@@ -18,7 +20,7 @@ function StartPage() {
         <div className="header-box">
           <div className="header-wraper">
             <div className="box-logo">
-              <div className="b6e5">
+              <div className="container-img">
                 <a href="/">
                   <img src={img1} alt="..." />
                 </a>

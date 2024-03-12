@@ -12,6 +12,16 @@
     .box-show {
       flex: 1 1 0%;
       position: relative;
+      @media screen and (max-width: 576px) {
+        .viwer-box {
+          padding: 0 !important;
+          margin: 0 !important;
+          .bibibig {
+            margin: 0 !important;
+          }
+        }
+      }
+
       .box-wraperrr {
         flex: 0 0 auto;
         width: 100%;

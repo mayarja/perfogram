@@ -5,7 +5,7 @@ import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import useClickOutside from "../../useClickOutside";
 
-export function TooltipBoxAction({ title, children, status, placement }) {
+export function TooltipBoxAction({ title, children, status, placement, b6e5 }) {
   const [open, setOpen] = useState(false);
 
   const handleTooltipClose = () => {
@@ -48,7 +48,7 @@ export function TooltipBoxAction({ title, children, status, placement }) {
 
   return (
     <ClickAwayListener onClickAway={handleTooltipClose}>
-      <div>
+      <div style={{ height: b6e5 && "100%" }}>
         <CustomTooltip
           open={open}
           disableFocusListener

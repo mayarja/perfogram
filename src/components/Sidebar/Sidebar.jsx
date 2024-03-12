@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./Sidebar.scss";
 import Commints from "../Commints/Commints";
 import Banners from "../Banners/Banners";
 import Brand from "../Brand/Brand";
 import PrivateChat from "../PrivateChat/PrivateChat";
 import { ManageSideBarSize } from "../../store/theme";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Viwers from "../Viwers/Viwers";
 
 function Sidebar() {
-  let [Check, setTap] = useState("Commints");
   let [close, setClose] = useState(false);
+  let [Check, setTap] = useState("");
+
   let dispatch = useDispatch();
   let setCheck = (e) => {
     if (Check === e) {
@@ -21,6 +23,13 @@ function Sidebar() {
     }
     setTap(e);
   };
+
+  let { status } = useSelector((state) => state.themeslice);
+
+  // console.log("status=>", status);
+  useEffect(() => {
+    setTap(status === "modifier" ? "Commints" : "Viwers");
+  }, [status]);
   return (
     <div
       className={`box-setting d-none d-sm-block ${close ? "close" : "open"}`}
@@ -28,31 +37,40 @@ function Sidebar() {
       <div className="wrapper">
         <div className="box-icon">
           <div className="icons-wrap">
-            <div
-              className={`container-icon ${
-                Check === "Commints" ? "active" : ""
-              }`}
-              onClick={(e) => setCheck("Commints")}
-            >
-              <i className="fa-solid fa-message"></i>
-              <span>Comments</span>
-            </div>
-            <div
-              className={`container-icon ${
-                Check === "Banners" ? "active" : ""
-              }`}
-              onClick={(e) => setCheck("Banners")}
-            >
-              <i className="fa-regular fa-window-maximize" />
-              <span>Banners</span>
-            </div>
-            <div
-              className={`container-icon ${Check === "Brand" ? "active" : ""}`}
-              onClick={(e) => setCheck("Brand")}
-            >
-              <i className="fa-solid fa-palette"></i>
-              <span>Brand</span>
-            </div>
+            {status === "modifier" && (
+              <Fragment>
+                <div
+                  className={`container-icon ${
+                    Check === "Commints" ? "active" : ""
+                  }`}
+                  onClick={(e) => setCheck("Commints")}
+                >
+                  <i className="fa-solid fa-message"></i>
+                  <span>Comments</span>
+                </div>
+
+                <div
+                  className={`container-icon ${
+                    Check === "Banners" ? "active" : ""
+                  }`}
+                  onClick={(e) => setCheck("Banners")}
+                >
+                  <i className="fa-regular fa-window-maximize" />
+                  <span>Banners</span>
+                </div>
+
+                <div
+                  className={`container-icon ${
+                    Check === "Brand" ? "active" : ""
+                  }`}
+                  onClick={(e) => setCheck("Brand")}
+                >
+                  <i className="fa-solid fa-palette"></i>
+                  <span>Brand</span>
+                </div>
+              </Fragment>
+            )}
+
             <div
               className={`container-icon ${
                 Check === "Private" ? "active" : ""
@@ -60,7 +78,15 @@ function Sidebar() {
               onClick={(e) => setCheck("Private")}
             >
               <i className="fa-regular fa-comment-dots" />
-              <span>Private Chat</span>
+              <span>Chat</span>
+            </div>
+
+            <div
+              className={`container-icon ${Check === "Viwers" ? "active" : ""}`}
+              onClick={(e) => setCheck("Viwers")}
+            >
+              <i className="fa-solid fa-users" />
+              <span>Viwers</span>
             </div>
           </div>
         </div>
@@ -73,6 +99,8 @@ function Sidebar() {
               <Banners />
             ) : Check === "Brand" ? (
               <Brand />
+            ) : Check === "Viwers" ? (
+              <Viwers />
             ) : (
               <PrivateChat />
             )}
