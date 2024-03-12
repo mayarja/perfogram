@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/streamYard/static/css/main.098c0f3f.css",
-    "main.js": "/streamYard/static/js/main.ff6dbb64.js",
+    "main.css": "/streamYard/static/css/main.faf807a3.css",
+    "main.js": "/streamYard/static/js/main.c85a1d00.js",
     "static/media/about-1.jpg": "/streamYard/static/media/about-1.73f95a7b91a6a06088b1.jpg",
+    "static/media/img-mobile.jpg": "/streamYard/static/media/img-mobile.e9028a65d9f191ef0a39.jpg",
     "static/media/videoBack.mp4": "/streamYard/static/media/videoBack.f8cc5d6e8f2ec896cce0.mp4",
-    "static/media/logo-start.svg": "/streamYard/static/media/logo-start.f03aded2a495c253eef1896e22147302.svg",
+    "static/media/Perfogram_Logo_TransparentBG.png": "/streamYard/static/media/Perfogram_Logo_TransparentBG.ea51d8c4ccde47515821.png",
     "static/media/logo.svg": "/streamYard/static/media/logo.98b515c50c4d39ed79a77b070a33cb20.svg",
     "index.html": "/streamYard/index.html",
-    "main.098c0f3f.css.map": "/streamYard/static/css/main.098c0f3f.css.map",
-    "main.ff6dbb64.js.map": "/streamYard/static/js/main.ff6dbb64.js.map"
+    "main.faf807a3.css.map": "/streamYard/static/css/main.faf807a3.css.map",
+    "main.c85a1d00.js.map": "/streamYard/static/js/main.c85a1d00.js.map"
   },
   "entrypoints": [
-    "static/css/main.098c0f3f.css",
-    "static/js/main.ff6dbb64.js"
+    "static/css/main.faf807a3.css",
+    "static/js/main.c85a1d00.js"
   ]
 }
