@@ -13,8 +13,6 @@ function ViwerMobileCover() {
     }
   };
 
-  console.log("inp", inp);
-  console.log("datadatadata", data);
   return (
     <div className="viwer-mobile">
       <div className="box-gear-top">
