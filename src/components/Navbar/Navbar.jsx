@@ -10,7 +10,6 @@ function Navbar() {
           <div className="img-box">
             <img src={img2} alt="..." />
           </div>
-          <span>Test</span>
         </div>
         <div className="redcord">
           <div className="title">

@@ -63,7 +63,7 @@ function SettingBar() {
             <div className="conatiner-box">
               <div className="box-action">
                 {/*Box For Mic */}
-                {status !== "viwer" && (
+                {status !== "Viewer" && (
                   <Fragment>
                     {mic ? (
                       <div
@@ -111,7 +111,7 @@ function SettingBar() {
 
                 {/*Box For cam */}
 
-                {status !== "viwer" && (
+                {status !== "Viewer" && (
                   <Fragment>
                     {cam ? (
                       <div
@@ -157,20 +157,20 @@ function SettingBar() {
                   </Fragment>
                 )}
 
-                {/*start Box For Viwer Only  */}
-                {status === "viwer" && (
+                {/*start Box For Viewer Only  */}
+                {status === "Viewer" && (
                   <div className="box-icon">
                     <i className="fa-solid fa-heart" />
                     <span>Love</span>
                   </div>
                 )}
-                {status === "viwer" && (
+                {status === "Viewer" && (
                   <div className="box-icon">
                     <i className="fa-solid fa-hand" />
                     <span>Intervention</span>
                   </div>
                 )}
-                {/*start Box For Viwer Only  */}
+                {/*start Box For Viewer Only  */}
 
                 {/*Box For setting */}
                 <div
@@ -182,7 +182,7 @@ function SettingBar() {
                 </div>
 
                 {/*Box For Present */}
-                {status !== "viwer" && (
+                {status !== "Viewer" && (
                   <div className="box-icon">
                     <i className="fa-solid fa-desktop" />
                     <span>Present</span>
@@ -190,7 +190,7 @@ function SettingBar() {
                 )}
 
                 {/*Box For Invite */}
-                {status !== "viwer" && (
+                {status !== "Viewer" && (
                   <div className="box-icon">
                     <i className="fa-solid fa-user-plus" />
                     <span>Invite</span>

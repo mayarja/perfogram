@@ -42,10 +42,98 @@
       cursor: pointer;
     }
   }
+  // .commints-box {
+  //   position: relative;
+  //   width: 100%;
+  //   height: 100%;
+  // }
+  .commints {
+    position: absolute;
+    bottom: 44px;
+    left: -9px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 106%;
+    gap: 6px;
+    background-color: #00000020;
+    min-height: 220px;
+    height: 1px;
+    padding: 10px 5px;
+    flex-direction: column-reverse; /* Reversed flex-direction */
+    overflow-y: auto;
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%; /* Fills the entire container */
+    //   background: linear-gradient(
+    //     to top,
+    //     transparent 0%,
+    //     rgba(0, 0, 0, 0.2) 70%
+    //   ); /* Less intense opacity */
+    //   z-index: 1; /* Ensures the pseudo-element sits above messages */
+    // }
+    .meesage-box {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 4px;
+      margin-top: 2px;
+      .img-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(211, 211, 211, 0.37);
+        span {
+          color: #fff;
+          font-size: 1.4rem;
+          font-weight: 400;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP" !important;
+        }
+      }
+      .box-title {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        .name {
+          margin: 0px;
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP" !important;
+          font-size: 1.4rem;
+          font-weight: 400;
+          text-align: left;
+          overflow: hidden;
+          color: #eee;
+        }
+        .message {
+          margin-top: -3px;
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP" !important;
+          font-size: 1.4rem;
+          font-weight: 600;
+          line-height: 1.6;
+          text-align: left;
+          overflow: hidden;
+          color: #eee;
+        }
+      }
+    }
+  }
   .box-write-bottom {
     position: absolute;
     bottom: 15px;
-    left: 4px;
+    left: 2px;
     display: flex;
     justify-content: flex-start;
     align-items: center;

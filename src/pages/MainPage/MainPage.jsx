@@ -13,25 +13,25 @@ function MainPage() {
   let { status } = useSelector((state) => state.themeslice);
   return (
     <div className="Box-Project">
-      {status !== "viwer" && <Navbar />}
+      {status !== "Viewer" && <Navbar />}
       <div className="main-box">
         <div className="box-show row">
           <div
             className={`col-sm-12 box-wraperrr ${
-              status === "viwer" && "viwer-box"
+              status === "Viewer" && "viwer-box"
             }`}
           >
             <BoxVideo />
-            {status !== "viwer" && (
+            {status !== "Viewer" && (
               <div className="understage d-none d-sm-flex">
                 <UnderStage />
               </div>
             )}
             <SettingBar />
-            {status !== "viwer" && <MobileBox />}
+            {status !== "Viewer" && <MobileBox />}
           </div>
           <div className="d-block d-sm-none">
-            {status === "viwer" && <ViwerMobileCover />}
+            {status === "Viewer" && <ViwerMobileCover />}
           </div>
         </div>
         <Sidebar />

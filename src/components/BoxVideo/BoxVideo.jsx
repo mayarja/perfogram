@@ -104,14 +104,14 @@ function BoxVideo() {
         style={{
           flex: "25 auto",
           height:
-            status === "viwer"
+            status === "Viewer"
               ? "100%"
               : screenWidth <= 576
               ? (screenWidth / 16) * 9
               : "TEST",
         }}
       >
-        {/**Box Of Video   status === "viwer"
+        {/**Box Of Video   status === "Viewer"
                 ? "100%"
                 :*/}
         <div
@@ -120,7 +120,7 @@ function BoxVideo() {
           style={{
             height:
               screenWidth <= 576
-                ? status === "viwer"
+                ? status === "Viewer"
                   ? "100%"
                   : `${
                       width > divRef.current?.clientWidth
@@ -227,7 +227,7 @@ function BoxVideo() {
       </div>
 
       {/*Button actions foe edit on video box */}
-      {status !== "viwer" && (
+      {status !== "Viewer" && (
         <div className="box-btns d-none d-sm-flex">
           <div className="icnons-control">
             <div className="icnons-control2">

@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   CamStatus,
   ManageSettingBox,
-  ManageShowGest,
   MangeStart,
   MicStatus,
   StopCameraMic,
@@ -22,7 +21,7 @@ import Viwers from "../Viwers/Viwers";
 function MobileBox() {
   let [activeBox, setActiveBox] = useState("Comments");
 
-  let { cam, mic, settingBox, showGest } = useSelector(
+  let { cam, mic, settingBox, showGest, status } = useSelector(
     (state) => state.themeslice
   );
   let dispatch = useDispatch();
@@ -43,63 +42,84 @@ function MobileBox() {
   return (
     <div className="mobile-box d-block d-sm-none">
       <div className="list-actions">
+        {status === "Moderator" && (
+          <Fragment>
+            <div
+              onClick={(e) => {
+                setActiveBox("Comments");
+              }}
+              className={`box-item ${activeBox === "Comments" && "active"}`}
+            >
+              <span>Comments</span>
+            </div>
+            <div
+              onClick={(e) => {
+                setActiveBox("Banners");
+              }}
+              className={`box-item ${activeBox === "Banners" && "active"}`}
+            >
+              <span>Banners</span>
+            </div>
+            <div
+              onClick={(e) => {
+                setActiveBox("Brand");
+              }}
+              className={`box-item ${activeBox === "Brand" && "active"}`}
+            >
+              <span>Brand</span>
+            </div>
+          </Fragment>
+        )}
+
         <div
           onClick={(e) => {
-            setActiveBox("Comments");
-            dispatch(ManageShowGest(false));
+            setActiveBox("Chat");
           }}
-          className={`box-item ${activeBox === "Comments" && "active"}`}
+          className={`box-item ${activeBox === "Chat" && "active"}`}
         >
-          <span>Comments</span>
+          <span>Chat</span>
         </div>
+
         <div
           onClick={(e) => {
-            dispatch(ManageShowGest(false));
-            setActiveBox("Banners");
+            setActiveBox("Viewer");
           }}
-          className={`box-item ${activeBox === "Banners" && "active"}`}
+          className={`box-item ${activeBox === "Viewer" && "active"}`}
         >
-          <span>Banners</span>
+          <span>Viewers</span>
         </div>
-        <div
-          onClick={(e) => {
-            dispatch(ManageShowGest(false));
-            setActiveBox("Brands");
-          }}
-          className={`box-item ${activeBox === "Brands" && "active"}`}
-        >
-          <span>Brands</span>
-        </div>
-        <div
-          onClick={(e) => {
-            dispatch(ManageShowGest(false));
-            setActiveBox("PrivateChat");
-          }}
-          className={`box-item ${activeBox === "PrivateChat" && "active"}`}
-        >
-          <span>PrivateChat</span>
-        </div>
+
+        {status === "Moderator" && (
+          <div
+            onClick={(e) => {
+              setActiveBox("Guests");
+            }}
+            className={`box-item ${activeBox === "Guests" && "active"}`}
+          >
+            <span>Guests</span>
+          </div>
+        )}
       </div>
       <Fragment>
         <div className="box-result">
           <div className="wrapper-result">
             <div className="box-content">
-              {showGest ? (
+              {activeBox === "Comments" ? (
+                <Commints />
+              ) : activeBox === "Banners" ? (
+                <Banners />
+              ) : activeBox === "Brand" ? (
+                <Brand />
+              ) : activeBox === "Chat" ? (
+                <PrivateChat />
+              ) : activeBox === "Viewer" ? (
+                <Viwers />
+              ) : activeBox === "Guests" ? (
                 <div className="mobil-understage">
                   <div className="understage">
                     <UnderStage />
                   </div>
                 </div>
-              ) : activeBox === "Comments" ? (
-                <Commints />
-              ) : activeBox === "Banners" ? (
-                <Banners />
-              ) : activeBox === "Brands" ? (
-                <Brand />
-              ) : activeBox === "PrivateChat" ? (
-                <PrivateChat />
-              ) : activeBox === "Viwers" ? (
-                <Viwers />
               ) : (
                 ""
               )}
@@ -206,22 +226,29 @@ function MobileBox() {
               <i className="fa-solid fa-desktop" />
               <span>Present</span>
             </div>
-            */}
+           
             <div
               className="box-icon"
               onClick={() => {
                 setActiveBox("");
-                dispatch(ManageShowGest(true));
               }}
             >
               <i className="fa-solid fa-users" />
               <span>Guests</span>
+            </div> */}
+
+            <div
+              className="box-icon"
+              onClick={() => dispatch(ManageSettingBox(true))}
+            >
+              <i className="fa-solid fa-gear" />
+              <span>Settings</span>
             </div>
 
             <TooltipBoxAction
               title={
                 <ul className="box-action-toltip list-unstyled">
-                  <li
+                  {/***   <li
                     className=""
                     onClick={() => dispatch(ManageSettingBox(true))}
                   >
@@ -230,12 +257,11 @@ function MobileBox() {
                   <li
                     className=""
                     onClick={() => {
-                      dispatch(ManageShowGest(false));
-                      setActiveBox("Viwers");
+                      setActiveBox("Viewer");
                     }}
                   >
-                    <i className="fa-solid fa-users" /> <span>Viwers</span>
-                  </li>
+                    <i className="fa-solid fa-users" /> <span>Viewer</span>
+                  </li> */}
                   <li className="" onClick={() => dispatch(MangeStart(true))}>
                     <i
                       className="fa-solid fa-circle-xmark"
@@ -250,7 +276,7 @@ function MobileBox() {
               <div className="box-icon">
                 <i className="fa-solid fa-ellipsis" />
                 <span>More</span>
-                <label>3</label>
+                <label>1</label>
               </div>
             </TooltipBoxAction>
             {/*

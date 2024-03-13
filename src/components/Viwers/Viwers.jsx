@@ -11,21 +11,21 @@ function Viwers() {
     <div className="box-icon h-100">
       <p
         style={{ fontSize: "1.6rem", cursor: "pointer" }}
-        onClick={(e) => ToggleStatus("modifier")}
+        onClick={(e) => ToggleStatus("Moderator")}
       >
-        modifier
+        Moderator
       </p>
       <p
         style={{ fontSize: "1.6rem", cursor: "pointer" }}
-        onClick={(e) => ToggleStatus("host")}
+        onClick={(e) => ToggleStatus("Host")}
       >
-        host
+        Host
       </p>
       <p
         style={{ fontSize: "1.6rem", cursor: "pointer" }}
-        onClick={(e) => ToggleStatus("viwer")}
+        onClick={(e) => ToggleStatus("Viewer")}
       >
-        viwer
+        Viewer
       </p>
     </div>
   );

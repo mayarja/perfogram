@@ -10,7 +10,7 @@ function StartPage() {
 
   let GoToVideoCall = (e) => {
     e.preventDefault();
-    dispatch(ManageControlStatus("modifier"));
+    dispatch(ManageControlStatus("Moderator"));
     dispatch(MangeStart(false));
   };
 

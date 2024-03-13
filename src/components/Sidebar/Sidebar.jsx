@@ -28,7 +28,7 @@ function Sidebar() {
 
   // console.log("status=>", status);
   useEffect(() => {
-    setTap(status === "modifier" ? "Commints" : "Viwers");
+    setTap(status === "Moderator" ? "Commints" : "Viewer");
   }, [status]);
   return (
     <div
@@ -37,7 +37,7 @@ function Sidebar() {
       <div className="wrapper">
         <div className="box-icon">
           <div className="icons-wrap">
-            {status === "modifier" && (
+            {status === "Moderator" && (
               <Fragment>
                 <div
                   className={`container-icon ${
@@ -82,11 +82,11 @@ function Sidebar() {
             </div>
 
             <div
-              className={`container-icon ${Check === "Viwers" ? "active" : ""}`}
-              onClick={(e) => setCheck("Viwers")}
+              className={`container-icon ${Check === "Viewer" ? "active" : ""}`}
+              onClick={(e) => setCheck("Viewer")}
             >
               <i className="fa-solid fa-users" />
-              <span>Viwers</span>
+              <span>Viewers</span>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ function Sidebar() {
               <Banners />
             ) : Check === "Brand" ? (
               <Brand />
-            ) : Check === "Viwers" ? (
+            ) : Check === "Viewer" ? (
               <Viwers />
             ) : (
               <PrivateChat />

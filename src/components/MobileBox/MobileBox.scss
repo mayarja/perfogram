@@ -9,17 +9,21 @@
   }
   .list-actions {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     background-color: #fff;
     border-bottom: 1px solid rgba(27, 31, 41, 0.2);
     padding: 6px 5px 0px 5px;
     width: 100%;
+    overflow-x: auto;
     .box-item {
       position: relative;
       transition: all 0.3s ease-in-out;
       padding-bottom: 5px;
       cursor: pointer;
+      min-width: 100px;
+      text-align: center;
+      flex: 1;
       span {
         margin: 0px;
         color: rgb(79, 84, 97);

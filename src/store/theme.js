@@ -13,8 +13,7 @@ let themeslice = createSlice({
     startStatus: true,
     sideBarStatus: false,
     settingBox: false,
-    showGest: false,
-    status: "", //viwer,host,modifier
+    status: "", //Viewer,Host,Moderator
   },
   reducers: {
     getTheme: (state, action) => {
@@ -47,9 +46,7 @@ let themeslice = createSlice({
     ManageSettingBox: (state, action) => {
       state.settingBox = action.payload;
     },
-    ManageShowGest: (state, action) => {
-      state.showGest = action.payload;
-    },
+
     ManageControlStatus: (state, action) => {
       state.status = action.payload;
     },
@@ -68,6 +65,5 @@ export let {
   MangeStart,
   ManageSideBarSize,
   ManageSettingBox,
-  ManageShowGest,
   ManageControlStatus,
 } = themeslice.actions;
