@@ -167,7 +167,7 @@ function SettingBar() {
                 {status === "Viewer" && (
                   <div className="box-icon">
                     <i className="fa-solid fa-hand" />
-                    <span>Intervention</span>
+                    <span>Raise Hand</span>
                   </div>
                 )}
                 {/*start Box For Viewer Only  */}

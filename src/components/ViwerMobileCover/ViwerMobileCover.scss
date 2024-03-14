@@ -62,6 +62,17 @@
     padding: 10px 5px;
     flex-direction: column-reverse; /* Reversed flex-direction */
     overflow-y: auto;
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: #eee;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgb(165, 160, 160);
+    }
     // &::before {
     //   content: "";
     //   position: absolute;
