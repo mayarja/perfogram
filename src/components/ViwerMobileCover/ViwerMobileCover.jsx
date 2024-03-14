@@ -11,7 +11,7 @@ function ViwerMobileCover() {
     if (inp.trim() !== "") {
       setData([
         { name: "mayar", message: inp, img: true },
-        ...data, // Spread existing messages to maintain order 12312312
+        ...data, // Spread existing messages to maintain order
       ]);
       setInp(""); // Clear input after sending
     }
