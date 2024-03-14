@@ -30,7 +30,7 @@ function BoxVideo() {
     if (divRef.current) {
       const newHeight = divRef.current.clientHeight; // Get the new height
       const newWidth = divRef.current.clientWidth; // Get the new height
-      console.log("sideBarStatus==>", sideBarStatus);
+      // console.log("sideBarStatus==>", sideBarStatus);
       const newHeightChild = childRef.current?.clientHeight; // Get the new height
       const newWidthChild = childRef.current?.clientWidth; // Get the new height
       const screenWidthLive = window.innerWidth;
@@ -44,7 +44,7 @@ function BoxVideo() {
         condition3 && Math.abs(heightFromStart - screenHightLive) > 10;
 
       if (screenWidthLive < 575 && status === "Viewer") {
-        console.log("tes");
+        // console.log("tes");
       } else {
         if (condition1 || condition2 || checkHeightChange) {
           setHeight(screenWidthLive <= 1199 ? 100 : 112.5);
@@ -54,7 +54,7 @@ function BoxVideo() {
 
       setTimeout(() => {
         const newHeight = divRef.current.clientHeight; // Adjust based on your needs
-        console.log("newHeightnewHeight", newHeight);
+        // console.log("newHeightnewHeight", newHeight);
         let scaleValue = generateSacle(newHeight);
         setSacle(scaleValue);
         setHeight(newHeight);

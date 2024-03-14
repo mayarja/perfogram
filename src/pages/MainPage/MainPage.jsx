@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Mainpage.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import BoxVideo from "../../components/BoxVideo/BoxVideo";
@@ -11,8 +11,34 @@ import ViwerMobileCover from "../../components/ViwerMobileCover/ViwerMobileCover
 
 function MainPage() {
   let { status } = useSelector((state) => state.themeslice);
+  const [innerHeight, setInnerHeight] = useState(window.innerHeight);
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      setInnerHeight(window.innerHeight);
+      setInnerWidth(window.innerWidth);
+    };
+
+    updateHeight(); // Call initially on component mount
+
+    window.addEventListener("resize", updateHeight); // Listen for resize
+
+    return () => {
+      window.removeEventListener("resize", updateHeight); // Cleanup on unmount
+    };
+  }, []);
+
+  console.log("innerHeight", innerHeight);
+  console.log("innerWidth", innerWidth);
   return (
-    <div className="Box-Project">
+    <div
+      className="Box-Project"
+      style={{
+        height: innerWidth < 575 ? innerHeight - 1 : "100vh",
+        width: innerWidth < 575 ? innerWidth : "100%",
+      }}
+    >
       {status !== "Viewer" && <Navbar />}
       <div className="main-box">
         <div className="box-show row">

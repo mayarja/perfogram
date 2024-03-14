@@ -6,9 +6,24 @@ function ViwerMobileCover() {
   let [data, setData] = useState([
     { name: "mayar", message: "good morning guys 3", img: true },
   ]);
+
   const handleChange = () => {
     if (inp.trim() !== "") {
-      setData([...data, { name: "mayar", message: inp, img: true }]);
+      setData([
+        { name: "mayar", message: inp, img: true },
+        ...data, // Spread existing messages to maintain order
+      ]);
+      setInp(""); // Clear input after sending
+    }
+  };
+
+  let SendCommint = (e) => {
+    e.preventDefault();
+    if (inp.trim() !== "") {
+      setData([
+        { name: "mayar", message: inp, img: true },
+        ...data, // Spread existing messages to maintain order
+      ]);
       setInp(""); // Clear input after sending
     }
   };
@@ -38,13 +53,13 @@ function ViwerMobileCover() {
             );
           })}
       </div>
-      <div className="box-write-bottom">
-        <div className="icon-send">
+      <form className="box-write-bottom" onSubmit={(e) => SendCommint(e)}>
+        <button className="icon-send">
           <i
-            className={`fa-solid fa-play fa-rotate-180  ${inp && "active"}`}
+            className={`fa-solid fa-play   ${inp && "active"}`}
             onClick={(e) => handleChange(e)}
           />
-        </div>
+        </button>
         <input
           type="text"
           placeholder="Add comment"
@@ -53,7 +68,7 @@ function ViwerMobileCover() {
         />
         <i className="fa-solid fa-heart ms-1 me-2" />
         <i className="fa-solid fa-hand" />
-      </div>
+      </form>
     </div>
   );
 }
