@@ -36,7 +36,8 @@ function MainPage() {
       className="Box-Project"
       style={{
         height: innerHeight - 1,
-        width: innerWidth - 1,
+        maxWidth: innerWidth - 1,
+        // width: innerWidth - 1,
       }}
     >
       {status !== "Viewer" && <Navbar />}
