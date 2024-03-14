@@ -36,13 +36,20 @@ function BoxVideo() {
       const screenWidthLive = window.innerWidth;
       const screenHightLive = window.innerHeight;
 
-      if (
-        newWidthChild >= newWidth ||
-        screenWidthLive > widtFromStart ||
-        Math.abs(heightFromStart - screenHightLive) > 10
-      ) {
-        setHeight(screenWidthLive <= 1199 ? 100 : 112.5);
-        setWidth(screenWidthLive <= 1199 ? 100 : 200);
+      const condition1 = newWidthChild >= newWidth;
+      const condition2 = screenWidthLive > widtFromStart;
+
+      const condition3 = screenWidthLive > 575 && status !== "Viewer";
+      const checkHeightChange =
+        condition3 && Math.abs(heightFromStart - screenHightLive) > 10;
+
+      if (screenWidthLive < 575 && status === "Viewer") {
+        console.log("tes");
+      } else {
+        if (condition1 || condition2 || checkHeightChange) {
+          setHeight(screenWidthLive <= 1199 ? 100 : 112.5);
+          setWidth(screenWidthLive <= 1199 ? 100 : 200);
+        }
       }
 
       setTimeout(() => {
