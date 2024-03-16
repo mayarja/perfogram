@@ -1,6 +1,6 @@
 {
-  "homepage": "https://mayarja.github.io/streamYard",
-  "name": "streamyard",
+  "homepage": "https://mayarja.github.io/perfogram",
+  "name": "perfogram",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

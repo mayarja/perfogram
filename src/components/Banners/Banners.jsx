@@ -304,6 +304,7 @@ function Banners() {
                           <BoxTooltipTitle placement="top" title="Edit">
                             <div
                               className="edit"
+                              style={{ margin: "0", marginRight: "-5px" }}
                               onClick={(e) => {
                                 setStateEdit(index);
                                 setBoxCreate(true);

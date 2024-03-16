@@ -5,7 +5,14 @@ import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import useClickOutside from "../../useClickOutside";
 
-export function TooltipBoxAction({ title, children, status, placement, b6e5 }) {
+export function TooltipBoxAction({
+  title,
+  children,
+  status,
+  placement,
+  b6e5,
+  classNeed,
+}) {
   const [open, setOpen] = useState(false);
 
   const handleTooltipClose = () => {
@@ -30,6 +37,7 @@ export function TooltipBoxAction({ title, children, status, placement, b6e5 }) {
       boxShadow: "rgba(0, 0, 0, 0.25) 0px 3px 12px -3px",
       borderColor: "rgba(27, 31, 41, 0.2)",
     },
+
     [`& .${tooltipClasses.tooltip}`]: {
       backgroundColor: "rgb(255, 255, 255)",
       borderRadius: "4px",
@@ -57,13 +65,91 @@ export function TooltipBoxAction({ title, children, status, placement, b6e5 }) {
           placement={placement ? placement : "bottom"}
           title={title}
         >
-          <div onClick={handleTooltipOpen}>{children}</div>
+          <div
+            className={classNeed ? classNeed : ""}
+            onClick={handleTooltipOpen}
+          >
+            {children}
+          </div>
         </CustomTooltip>
       </div>
     </ClickAwayListener>
   );
 }
 
+export function TooltipMobileAction({
+  title,
+  children,
+  status,
+  placement,
+  b6e5,
+  classNeed,
+}) {
+  const [open, setOpen] = useState(false);
+
+  const handleTooltipClose = () => {
+    setOpen(false);
+  };
+
+  const handleTooltipOpen = () => {
+    setOpen(true);
+  };
+
+  useEffect(() => {
+    if (status) {
+      handleTooltipClose();
+    }
+  }, [status]);
+
+  const CustomTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} arrow classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.arrow}`]: {
+      color: "#fff",
+      boxShadow: "rgba(0, 0, 0, 0.25) 0px 3px 12px -3px",
+      borderColor: "rgba(27, 31, 41, 0.2)",
+    },
+    [`& .${tooltipClasses.popper}`]: {
+      inset: "0px auto auto -2px ",
+    },
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: "rgb(255, 255, 255)",
+      borderRadius: "4px",
+      border: "1px solid rgba(27, 31, 41, 0.2)",
+      boxShadow: "rgba(0, 0, 0, 0.25) 0px 3px 12px -3px",
+      color: "inherit",
+      // minWidth: "200px",
+      // maxWidth: "280px",
+      margin: "0px",
+      padding: "4px 0px",
+      listStyleType: "none",
+      display: "flex",
+      flexDirection: "column",
+    },
+  }));
+
+  return (
+    <ClickAwayListener onClickAway={handleTooltipClose}>
+      <div style={{ height: b6e5 && "100%" }}>
+        <CustomTooltip
+          open={open}
+          disableFocusListener
+          disableHoverListener
+          disableTouchListener
+          placement={placement ? placement : "bottom"}
+          title={title}
+        >
+          <div
+            className={classNeed ? classNeed : ""}
+            onClick={handleTooltipOpen}
+          >
+            {children}
+          </div>
+        </CustomTooltip>
+      </div>
+    </ClickAwayListener>
+  );
+}
 export function BoxTooltipTitle({
   title,
   children,

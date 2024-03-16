@@ -166,20 +166,80 @@ function SettingBar() {
                 )}
                 {status === "Viewer" && (
                   <div className="box-icon">
-                    <i className="fa-solid fa-hand" />
-                    <span>Raise Hand</span>
+                    <TooltipBoxAction
+                      classNeed={'HandelTool'}
+                      title={
+                        <ul className="box-action-toltip list-unstyled">
+                          <li>
+                            <i
+                              className="fa-solid fa-microphone"
+                              style={{ fontSize: "15px" }}
+                            />
+                            <span>Request mic</span>
+                          </li>
+                          <li>
+                            <i
+                              className="fa-solid fa-video"
+                              style={{ fontSize: "15px" }}
+                            />
+                            <span>Request cam</span>
+                          </li>
+                        </ul>
+                      }
+                    >
+                      <i className="fa-solid fa-hand" />
+                      <span>Raise Hand</span>
+                    </TooltipBoxAction>
                   </div>
                 )}
                 {/*start Box For Viewer Only  */}
 
                 {/*Box For setting */}
-                <div
-                  className="box-icon"
-                  onClick={(e) => handleOpenSetting("open")}
-                >
-                  <i className="fa-solid fa-gear"></i>
-                  <span>Settings</span>
-                </div>
+                {status !== "Viewer" && (
+                  <div
+                    className="box-icon"
+                    onClick={(e) => handleOpenSetting("open")}
+                  >
+                    <i className="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                  </div>
+                )}
+
+                {status === "Viewer" && (
+                  <div className="box-icon">
+                    <TooltipBoxAction
+                      classNeed={true}
+                      title={
+                        <ul className="box-action-toltip list-unstyled">
+                          <li>
+                            <i
+                              className="fa-regular fa-user"
+                              style={{ fontSize: "15px" }}
+                            />
+                            <span>User login</span>
+                          </li>
+                          <li>
+                            <i
+                              className="fa-solid fa-video-slash"
+                              style={{ fontSize: "15px" }}
+                            />
+                            <span>Enable audio only</span>
+                          </li>
+                          <li>
+                            <i
+                              className="fa-solid fa-share"
+                              style={{ fontSize: "15px" }}
+                            />
+                            <span>Share room</span>
+                          </li>
+                        </ul>
+                      }
+                    >
+                      <i className="fa-solid fa-gear"></i>
+                      <span>Settings</span>
+                    </TooltipBoxAction>
+                  </div>
+                )}
 
                 {/*Box For Present */}
                 {status !== "Viewer" && (

@@ -14,7 +14,6 @@ import {
   StopCameraMic,
 } from "../../store/theme";
 import { BoxTooltipTitle, TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
-import GestSmallBox from "./GestSmallBox";
 import UnderStage from "../UnderStage/UnderStage";
 import Viwers from "../Viwers/Viwers";
 
@@ -38,6 +37,8 @@ function MobileBox() {
       dispatch(StopCameraMic(false));
     }
   };
+
+  let [check, setCheck] = useState("one");
 
   return (
     <div className="mobile-box d-block d-sm-none">
@@ -116,6 +117,196 @@ function MobileBox() {
                 <Viwers />
               ) : activeBox === "Guests" ? (
                 <div className="mobil-understage">
+                  <div className="layout-mobile">
+                    <div className="actionsss">
+                      <BoxTooltipTitle
+                        placement="top"
+                        backgroundColor="rgb(27, 31, 41)"
+                        title={
+                          <span className="titleWithButtons">
+                            Solo layout. Press <text>SHIFT</text> +{" "}
+                            <text>1</text>{" "}
+                          </span>
+                        }
+                      >
+                        <div
+                          className="box-icon"
+                          onClick={(e) => {
+                            setCheck("one");
+                          }}
+                        >
+                          <div
+                            className={`wraper-icon ${
+                              check === "one" ? "active" : ""
+                            }`}
+                          >
+                            <i className="fa-solid fa-user"></i>
+                          </div>
+                        </div>
+                      </BoxTooltipTitle>
+
+                      <BoxTooltipTitle
+                        placement="top"
+                        backgroundColor="rgb(27, 31, 41)"
+                        title={
+                          <span className="titleWithButtons">
+                            Cropped layout. Press <text>SHIFT</text> +{" "}
+                            <text>2</text>
+                          </span>
+                        }
+                      >
+                        <div
+                          className="box-icon"
+                          onClick={(e) => {
+                            setCheck("two");
+                          }}
+                        >
+                          <div
+                            className={`wraper-icon ${
+                              check === "two" ? "active" : ""
+                            }`}
+                          >
+                            <div className="conta-icon">
+                              <i className="fa-solid fa-user"></i>
+                            </div>
+                            <div className="hr"></div>
+                            <div className="conta-icon">
+                              <i className="fa-solid fa-user"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </BoxTooltipTitle>
+
+                      <BoxTooltipTitle
+                        placement="top"
+                        backgroundColor="rgb(27, 31, 41)"
+                        title={
+                          <span className="titleWithButtons">
+                            Group layout. Press <text>SHIFT</text> +{" "}
+                            <text>3</text>
+                          </span>
+                        }
+                      >
+                        <div
+                          className="box-icon"
+                          onClick={(e) => {
+                            setCheck("three");
+                          }}
+                        >
+                          <div
+                            className={`wraper-icon gap-2 ${
+                              check === "three" ? "active" : ""
+                            }`}
+                            style={{ padding: "1px" }}
+                          >
+                            <div className="conta-icon2">
+                              <i
+                                className="fa-solid fa-user"
+                                style={{ fontSize: "12px" }}
+                              ></i>
+                            </div>
+                            <div className="conta-icon2">
+                              <i
+                                className="fa-solid fa-user"
+                                style={{ fontSize: "12px" }}
+                              ></i>
+                            </div>
+                          </div>
+                        </div>
+                      </BoxTooltipTitle>
+
+                      <BoxTooltipTitle
+                        placement="top"
+                        backgroundColor="rgb(27, 31, 41)"
+                        title={
+                          <span className="titleWithButtons">
+                            Screen layout. Press <text>SHIFT</text> +{" "}
+                            <text>6</text>
+                          </span>
+                        }
+                      >
+                        <div
+                          className="box-icon"
+                          onClick={(e) => {
+                            setCheck("six");
+                          }}
+                        >
+                          <div
+                            className={`wraper-icon gap-2 ${
+                              check === "six" ? "active" : ""
+                            }`}
+                          >
+                            <div className="small-icon">
+                              <i className="fa-solid fa-user"></i>
+                            </div>
+                            <i
+                              className="fa-solid fa-square"
+                              style={{ fontSize: "30px" }}
+                            />
+                          </div>
+                        </div>
+                      </BoxTooltipTitle>
+
+                      <BoxTooltipTitle
+                        placement="top"
+                        backgroundColor="rgb(27, 31, 41)"
+                        title={
+                          <span className="titleWithButtons">
+                            Picture-in-Picture layout. Press <text>SHIFT</text>{" "}
+                            + <text>7</text>
+                          </span>
+                        }
+                      >
+                        <div
+                          className="box-icon"
+                          onClick={(e) => {
+                            setCheck("seven");
+                          }}
+                        >
+                          <div
+                            className={`wraper-icon  gap-2 ${
+                              check === "seven" ? "active" : ""
+                            }`}
+                          >
+                            <i className="fa-solid fa-user inside"></i>
+                            <i
+                              className="fa-solid fa-square"
+                              style={{ fontSize: "37px" }}
+                            />
+                          </div>
+                        </div>
+                      </BoxTooltipTitle>
+
+                      <BoxTooltipTitle
+                        placement="top"
+                        backgroundColor="rgb(27, 31, 41)"
+                        title={
+                          <span className="titleWithButtons">
+                            Cinema layout. Press <text>SHIFT</text> +{" "}
+                            <text>8</text>
+                          </span>
+                        }
+                      >
+                        <div
+                          className="box-icon"
+                          onClick={(e) => {
+                            setCheck("eaght");
+                          }}
+                        >
+                          <div
+                            className={`wraper-icon  gap-2 ${
+                              check === "eaght" ? "active" : ""
+                            }`}
+                          >
+                            <i
+                              className="fa-solid fa-square"
+                              style={{ fontSize: "37px" }}
+                            />
+                          </div>
+                        </div>
+                      </BoxTooltipTitle>
+                    </div>
+                  </div>
                   <div className="understage">
                     <UnderStage />
                   </div>

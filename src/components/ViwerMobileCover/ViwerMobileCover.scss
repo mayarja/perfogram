@@ -1,9 +1,26 @@
 .viwer-mobile {
   position: relative;
-  z-index: 9999999;
+  z-index: 9;
   //   background-color: red;
   width: 100%;
   height: 100%;
+
+  // &::before {
+  //   content: "";
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 31%;
+  //   left: -9px;
+  //   width: 105%;
+  //   height: 50px;
+  //   background: linear-gradient(
+  //     360deg,
+  //     rgba(255, 255, 255, 0),
+  //     rgb(74 71 71 / 30%) 60%
+  //   );
+  //   z-index: 1;
+  // }
+
   .box-gear-top {
     position: absolute;
     top: 20px;
@@ -47,6 +64,7 @@
   //   width: 100%;
   //   height: 100%;
   // }
+
   .commints {
     position: absolute;
     bottom: 44px;
@@ -73,20 +91,7 @@
     ::-webkit-scrollbar-thumb {
       background-color: rgb(165, 160, 160);
     }
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%; /* Fills the entire container */
-    //   background: linear-gradient(
-    //     to top,
-    //     transparent 0%,
-    //     rgba(0, 0, 0, 0.2) 70%
-    //   ); /* Less intense opacity */
-    //   z-index: 1; /* Ensures the pseudo-element sits above messages */
-    // }
+
     .meesage-box {
       display: flex;
       justify-content: flex-start;
@@ -153,7 +158,7 @@
     .icon-send {
       transition: all 0.2s ease !important;
       i {
-        font-size: 18px;
+        font-size: 20px;
         color: #eee;
         cursor: no-drop;
         transition: all 0.2s ease !important;
@@ -166,16 +171,25 @@
     }
     input {
       border: 0;
-      padding: 5px 8px;
+      padding: 5px 12px;
       flex: 1;
       height: 30px;
-      background-color: #00000031;
-      color: #fff;
-      font-size: 17px; //test
+      background-color: rgb(0 0 0 / 23%);
+      border: 1px solid rgba(27, 31, 41, 0.2);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 12px -3px;
+      font-size: 17px;
       border-radius: 12px;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #fff;
+      // background-color: #00000031;
+      // color: #fff;
+      // font-size: 17px; //test
+      // border-radius: 12px;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
       &::placeholder {
         color: #fff;
       }
@@ -186,7 +200,7 @@
       }
     }
     i {
-      font-size: 16px;
+      font-size: 21px;
       color: #eee;
     }
   }

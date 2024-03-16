@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ViwerMobileCover.scss";
 import img1 from "../../assits/img-mobile.jpg";
+import { TooltipMobileAction } from "../ToolTipsFolder/ToolTips";
 function ViwerMobileCover() {
   let [inp, setInp] = useState();
   let [data, setData] = useState([
@@ -35,7 +36,33 @@ function ViwerMobileCover() {
           <i className="fa-solid fa-user" />
           <span>5</span>
         </div>
-        <i className="fa-solid fa-gear"></i>
+        <TooltipMobileAction
+          classNeed={"HandelTool"}
+          title={
+            <ul className="box-mobile-toltip list-unstyled">
+              <li>
+                <i
+                  className="fa-regular fa-user"
+                  style={{ fontSize: "15px" }}
+                />
+                <span>User login</span>
+              </li>
+              <li>
+                <i
+                  className="fa-solid fa-video-slash"
+                  style={{ fontSize: "15px" }}
+                />
+                <span>Enable audio only</span>
+              </li>
+              <li>
+                <i className="fa-solid fa-share" style={{ fontSize: "15px" }} />
+                <span>Share room</span>
+              </li>
+            </ul>
+          }
+        >
+          <i className="fa-solid fa-gear"></i>
+        </TooltipMobileAction>
       </div>
       <div className="commints">
         {data &&
@@ -66,8 +93,28 @@ function ViwerMobileCover() {
           value={inp}
           onChange={(e) => setInp(e.target.value)}
         />
+
+        <TooltipMobileAction
+          classNeed={"HandelTool"}
+          title={
+            <ul className="box-mobile-toltip list-unstyled">
+              <li>
+                <i
+                  className="fa-solid fa-microphone"
+                  style={{ fontSize: "15px" }}
+                />
+                <span>Request mic</span>
+              </li>
+              <li>
+                <i className="fa-solid fa-video" style={{ fontSize: "14px" }} />
+                <span>Request cam</span>
+              </li>
+            </ul>
+          }
+        >
+          <i className="fa-solid fa-hand" />
+        </TooltipMobileAction>
         <i className="fa-solid fa-heart ms-1 me-2" />
-        <i className="fa-solid fa-hand" />
       </form>
     </div>
   );
