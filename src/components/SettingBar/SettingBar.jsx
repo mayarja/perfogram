@@ -167,7 +167,7 @@ function SettingBar() {
                 {status === "Viewer" && (
                   <div className="box-icon">
                     <TooltipBoxAction
-                      classNeed={'HandelTool'}
+                      classNeed={"HandelTool"}
                       title={
                         <ul className="box-action-toltip list-unstyled">
                           <li>
@@ -208,7 +208,7 @@ function SettingBar() {
                 {status === "Viewer" && (
                   <div className="box-icon">
                     <TooltipBoxAction
-                      classNeed={true}
+                      classNeed={"HandelTool"}
                       title={
                         <ul className="box-action-toltip list-unstyled">
                           <li>
