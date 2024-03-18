@@ -18,9 +18,8 @@ function BoxVideo() {
   const childRef = useRef(null);
   const [prevHeight, setPrevHeight] = useState(0); // Store the previous height
 
-  let { theme, title, color, ticker, sideBarStatus, status } = useSelector(
-    (state) => state.themeslice
-  );
+  let { theme, title, color, ticker, sideBarStatus, status, cover } =
+    useSelector((state) => state.themeslice);
 
   let generateSacle = (currentHight) => {
     let scale = (0.1395348051948052 * currentHight) / 100;
@@ -102,7 +101,7 @@ function BoxVideo() {
     ResizeBySideBar();
   }, [status]); // Only called when sideBarStatus changes
 
-  let [check, setCheck] = useState("one");
+  console.log("cover=1212/1*2*1/2*/>", cover);
 
   return (
     <Fragment>
@@ -149,15 +148,17 @@ function BoxVideo() {
         >
           <div className="box-conatiner1">
             <div className="box-conatiner2">
-              {/**<video
-              src={vi1}
-              loop
-              autoPlay
-              playsInline
-              preload="metadata"
-            ></video> 
-              */}
-              <img src={img1} alt="..." />
+              {cover.type === "Video" ? (
+                <video
+                  src={cover.src}
+                  loop={cover.loop}
+                  autoPlay
+                  playsInline
+                  preload="metadata"
+                ></video>
+              ) : (
+                <img src={img1} alt="..." />
+              )}
             </div>
             {theme === "Bubble" && title.title ? (
               <div className="them-box">

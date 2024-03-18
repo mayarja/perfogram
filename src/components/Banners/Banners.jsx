@@ -108,7 +108,7 @@ function Banners() {
                 </div>
               </div>
 
-              {/*Action For Folder*/}
+              {/*Action For Folder
               <TooltipBoxAction
                 title={
                   <ul className="box-action-toltip list-unstyled">
@@ -139,7 +139,7 @@ function Banners() {
                 status={open}
               >
                 <i className="fa-solid fa-ellipsis-vertical pints" />
-              </TooltipBoxAction>
+              </TooltipBoxAction>*/}
             </li>
           </ul>
         </div>
@@ -147,8 +147,9 @@ function Banners() {
         //All  Banners
         <div className="wrapper-side Details">
           <div className="header-Details">
-            <div className="box-back" onClick={(e) => setShowFolder(true)}>
-              <i className="fa-solid fa-angle-left" />
+            {/**<div className="box-back" onClick={(e) => setShowFolder(true)}> */}
+            <div className="box-back">
+              {/**  <i className="fa-solid fa-angle-left" /> */}
               <span>Example Banners</span>
             </div>
             <TooltipBoxAction

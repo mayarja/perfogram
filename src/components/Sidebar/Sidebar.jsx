@@ -1,12 +1,13 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Sidebar.scss";
-import Commints from "../Commints/Commints";
 import Banners from "../Banners/Banners";
 import Brand from "../Brand/Brand";
 import PrivateChat from "../PrivateChat/PrivateChat";
 import { ManageSideBarSize } from "../../store/theme";
 import { useDispatch, useSelector } from "react-redux";
 import Viwers from "../Viwers/Viwers";
+import UploadVideos from "../UploadVideos/UploadVideos";
+import Graphics from "../Graphics/Graphics";
 
 function Sidebar() {
   let [close, setClose] = useState(false);
@@ -28,7 +29,7 @@ function Sidebar() {
 
   // console.log("status=>", status);
   useEffect(() => {
-    setTap(status === "Moderator" ? "Commints" : "Viewer");
+    setTap(status === "Moderator" ? "Banners" : "Viewer");
   }, [status]);
   return (
     <div
@@ -39,16 +40,6 @@ function Sidebar() {
           <div className="icons-wrap">
             {status === "Moderator" && (
               <Fragment>
-                <div
-                  className={`container-icon ${
-                    Check === "Commints" ? "active" : ""
-                  }`}
-                  onClick={(e) => setCheck("Commints")}
-                >
-                  <i className="fa-solid fa-message"></i>
-                  <span>Comments</span>
-                </div>
-
                 <div
                   className={`container-icon ${
                     Check === "Banners" ? "active" : ""
@@ -67,6 +58,26 @@ function Sidebar() {
                 >
                   <i className="fa-solid fa-palette"></i>
                   <span>Brand</span>
+                </div>
+
+                <div
+                  className={`container-icon ${
+                    Check === "Videos" ? "active" : ""
+                  }`}
+                  onClick={(e) => setCheck("Videos")}
+                >
+                  <i className="fa-solid fa-file-video" />
+                  <span>Videos</span>
+                </div>
+
+                <div
+                  className={`container-icon ${
+                    Check === "Graphics" ? "active" : ""
+                  }`}
+                  onClick={(e) => setCheck("Graphics")}
+                >
+                  <i className="fa-solid fa-image" />
+                  <span>Graphics</span>
                 </div>
               </Fragment>
             )}
@@ -93,14 +104,16 @@ function Sidebar() {
 
         <div className="box-result">
           <div className="wrapper-result">
-            {Check === "Commints" ? (
-              <Commints />
-            ) : Check === "Banners" ? (
+            {Check === "Banners" ? (
               <Banners />
             ) : Check === "Brand" ? (
               <Brand />
             ) : Check === "Viewer" ? (
               <Viwers />
+            ) : Check === "Videos" ? (
+              <UploadVideos />
+            ) : Check === "Graphics" ? (
+              <Graphics />
             ) : (
               <PrivateChat />
             )}

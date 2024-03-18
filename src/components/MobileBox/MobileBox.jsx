@@ -18,7 +18,7 @@ import UnderStage from "../UnderStage/UnderStage";
 import Viwers from "../Viwers/Viwers";
 
 function MobileBox() {
-  let [activeBox, setActiveBox] = useState("Comments");
+  let [activeBox, setActiveBox] = useState("Banners");
 
   let { cam, mic, settingBox, showGest, status } = useSelector(
     (state) => state.themeslice
@@ -45,14 +45,6 @@ function MobileBox() {
       <div className="list-actions">
         {status === "Moderator" && (
           <Fragment>
-            <div
-              onClick={(e) => {
-                setActiveBox("Comments");
-              }}
-              className={`box-item ${activeBox === "Comments" && "active"}`}
-            >
-              <span>Comments</span>
-            </div>
             <div
               onClick={(e) => {
                 setActiveBox("Banners");
@@ -105,9 +97,7 @@ function MobileBox() {
         <div className="box-result">
           <div className="wrapper-result">
             <div className="box-content">
-              {activeBox === "Comments" ? (
-                <Commints />
-              ) : activeBox === "Banners" ? (
+              {activeBox === "Banners" ? (
                 <Banners />
               ) : activeBox === "Brand" ? (
                 <Brand />

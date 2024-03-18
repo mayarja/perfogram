@@ -20,7 +20,7 @@ export function TooltipBoxAction({
   };
 
   const handleTooltipOpen = () => {
-    setOpen(true);
+    setOpen(!open);
   };
 
   useEffect(() => {
@@ -154,6 +154,7 @@ export function BoxTooltipTitle({
   title,
   children,
   placement,
+  bigWidth,
   backgroundColor,
 }) {
   const CustomTooltip = styled(({ className, ...props }) => (
@@ -161,7 +162,7 @@ export function BoxTooltipTitle({
   ))(({ theme }) => ({
     [`& .${tooltipClasses.arrow}`]: {
       color: backgroundColor ? backgroundColor : theme.palette.common.black,
-      maxWidth: "340px", // Add max-width style
+      maxWidth: bigWidth ? "340px" : "340px", // Add max-width style
       overflowWrap: "break-word", // Add overflow-wrap style
     },
     [`& .${tooltipClasses.tooltip}`]: {
@@ -171,6 +172,7 @@ export function BoxTooltipTitle({
       fontSize: "1.4rem",
       fontFamily: '"Noto Sans JP", Prompt, sans-serif', // Add font-family style
       lineHeight: 1.4, // Add line-height style
+      minWidth: bigWidth ? "340px" : "inherit",
     },
   }));
 
