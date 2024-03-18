@@ -157,7 +157,7 @@ function BoxVideo() {
                   preload="metadata"
                 ></video>
               ) : (
-                <img src={img1} alt="..." />
+                <img src={cover.src ? cover.src : img1} alt="..." />
               )}
             </div>
             {theme === "Bubble" && title.title ? (

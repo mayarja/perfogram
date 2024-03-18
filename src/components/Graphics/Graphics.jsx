@@ -1,22 +1,29 @@
 import React, { useState } from "react";
 import { BoxTooltipTitle, TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
+import img1 from "../../assits/img-mobile.jpg";
+import { ManageCover } from "../../store/theme";
+import { useDispatch, useSelector } from "react-redux";
 
 function Graphics() {
+  const [open, setOpen] = React.useState(false);
+
+  let { cover } = useSelector((state) => state.themeslice);
+
   const [uploadedVideo, setUploadedVideo] = useState([
     {
       name: "test",
-      duration: "0:30",
-      src: "https://storage.googleapis.com/streamyard-app/examples/video-clips/countdown3_1280x720_q_med.mp4",
+      src: img1,
     },
   ]);
   let [active, setActive] = useState(null);
   let [File, setFile] = useState("");
+  let dispatch = useDispatch();
 
-  const handleVideoUpload = (event) => {
+  const handleImageUpload = (event) => {
     const file = event.target.files[0];
-    setFile(event.target.files[0]);
     console.log("file", file);
-    if (file && file.type === "video/mp4") {
+    if (file && file.type.startsWith("image/")) {
+      setFile(event.target.files[0]);
       const reader = new FileReader();
       reader.onload = (e) => {
         setUploadedVideo((prev) => {
@@ -24,17 +31,19 @@ function Graphics() {
             ...prev,
             {
               name: file.name,
-              duration: "0:30", // You can update this with the actual video length
-              src: e.target.result,
+              src: e.target.result, // Store image data URL
+              // No need for duration as it's an image
             },
           ];
         });
       };
       reader.readAsDataURL(file);
       setFile("");
+    } else {
+      // Handle invalid file type
+      alert("Please select a valid image file (JPEG, PNG, etc.)");
     }
   };
-  const [open, setOpen] = React.useState(false);
 
   return (
     <div className="wrapper-side">
@@ -59,25 +68,20 @@ function Graphics() {
             <i className="fa-regular fa-circle-question ms-2 question" />
           </BoxTooltipTitle>
         </div>
-        <div className="loop d-flex">
-          <input id="loop" type="checkbox" className="check-form" />
-          <label htmlFor="loop">Loop</label>
-          <BoxTooltipTitle
-            backgroundColor={"rgba(27, 31, 41)"}
-            title={"Enable loop to repeat video clips"}
-            placement="top"
-          >
-            <i className="fa-regular fa-circle-question ms-2 question" />
-          </BoxTooltipTitle>
-        </div>
+
         <ul className="list-unstyled mb-2">
-          {uploadedVideo.map((video, index) => (
+          {uploadedVideo.map((img, index) => (
             <li key={index} className="mb-2">
               <div className="wraper-box-video">
                 <div
                   className={`layer-video ${active === index && "active"}`}
                   onClick={() => {
                     setActive(active === index ? "" : index);
+                    dispatch(
+                      ManageCover(
+                        active === index ? "" : { type: "img", src: img.src }
+                      )
+                    );
                   }}
                 >
                   <div className={`box-video `}>
@@ -95,10 +99,10 @@ function Graphics() {
                       )}
                     </div>
                     <div className="liner"></div>
-                    <video src={video.src} /> {/* Display uploaded video */}
+                    <img src={img.src} alt={img.name} />{" "}
+                    {/* Display uploaded video */}
                     <div className="box-title">
-                      <p>{video.name}</p>
-                      <p>{video.duration || "0:30"}</p>
+                      <p>{img.name}</p>
                     </div>
                     <i className="fa-solid fa-clapperboard viv" />
                   </div>
@@ -113,11 +117,11 @@ function Graphics() {
                           <ul className="box-action-toltip list-unstyled">
                             <li className="">
                               <i className="fa-solid fa-pen" />
-                              <span>Rename Video</span>
+                              <span>Rename Graphic</span>
                             </li>
                             <li className="">
                               <i className="fa-solid fa-trash" />
-                              <span>Delete Video</span>
+                              <span>Delete Graphic</span>
                             </li>
                           </ul>
                         }
@@ -139,7 +143,7 @@ function Graphics() {
                 id="upload"
                 value={File}
                 className="d-none"
-                onChange={handleVideoUpload}
+                onChange={handleImageUpload}
               />
               <div className="box-plus">
                 <span>+</span>
