@@ -114,6 +114,7 @@
             justify-content: space-between;
             -webkit-box-align: center;
             align-items: center;
+            // margin-top: 2px;
             .liner {
               width: calc(100% + 6px);
               height: calc(100% + 6px);
@@ -124,7 +125,7 @@
               z-index: -1;
             }
             video {
-              width: 92px;
+              width: 92.5px;
               flex-shrink: 0;
               height: 100%;
               margin-right: 16px;
@@ -134,7 +135,7 @@
               z-index: 3;
             }
             img {
-              width: 92px;
+              width: 92.5px;
               flex-shrink: 0;
               height: 100%;
               margin-right: 16px;

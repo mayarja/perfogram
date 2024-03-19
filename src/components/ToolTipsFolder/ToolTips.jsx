@@ -44,7 +44,7 @@ export function TooltipBoxAction({
       border: "1px solid rgba(27, 31, 41, 0.2)",
       boxShadow: "rgba(0, 0, 0, 0.25) 0px 3px 12px -3px",
       color: "inherit",
-      minWidth: "200px",
+      minWidth: "175px",
       maxWidth: "280px",
       margin: "0px",
       padding: "4px 0px",

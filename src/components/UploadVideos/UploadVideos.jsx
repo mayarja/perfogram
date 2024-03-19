@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import "./UploadVideo.scss";
 
 import { BoxTooltipTitle, TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
@@ -16,6 +16,18 @@ function UploadVideos() {
       src: "https://storage.googleapis.com/streamyard-app/examples/video-clips/countdown3_1280x720_q_med.mp4",
     },
   ]);
+
+  const dragVideo = useRef(0);
+  const dragOverVideo = useRef(0);
+
+  function handleSort() {
+    const bannerVideo = [...uploadedVideo];
+    const temp = bannerVideo[dragVideo.current];
+    bannerVideo[dragVideo.current] = bannerVideo[dragOverVideo.current];
+    bannerVideo[dragOverVideo.current] = temp;
+    setUploadedVideo(bannerVideo);
+  }
+
   let [active, setActive] = useState(null);
   let [File, setFile] = useState("");
   let [loop, setLoop] = useState(false);
@@ -90,7 +102,15 @@ function UploadVideos() {
         </div>
         <ul className="list-unstyled mb-2">
           {uploadedVideo.map((video, index) => (
-            <li key={index} className="mb-2">
+            <li
+              key={index}
+              className="mb-2"
+              draggable
+              onDragStart={() => (dragVideo.current = index)}
+              onDragEnter={() => (dragOverVideo.current = index)}
+              onDragEnd={handleSort}
+              onDragOver={(e) => e.preventDefault()}
+            >
               <div className="wraper-box-video">
                 <div
                   className={`layer-video ${active === index && "active"}`}
@@ -156,6 +176,7 @@ function UploadVideos() {
             </li>
           ))}
         </ul>
+
         <div className="box-add-video">
           <div className="wrapper">
             <label htmlFor="upload">

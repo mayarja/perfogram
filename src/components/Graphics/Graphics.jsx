@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { BoxTooltipTitle, TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
 import img1 from "../../assits/img-mobile.jpg";
 import { ManageCover } from "../../store/theme";
@@ -15,6 +15,18 @@ function Graphics() {
       src: img1,
     },
   ]);
+
+  const dragVideo = useRef(0);
+  const dragOverVideo = useRef(0);
+
+  function handleSort() {
+    const bannerVideo = [...uploadedVideo];
+    const temp = bannerVideo[dragVideo.current];
+    bannerVideo[dragVideo.current] = bannerVideo[dragOverVideo.current];
+    bannerVideo[dragOverVideo.current] = temp;
+    setUploadedVideo(bannerVideo);
+  }
+
   let [active, setActive] = useState(null);
   let [File, setFile] = useState("");
   let dispatch = useDispatch();
@@ -71,7 +83,15 @@ function Graphics() {
 
         <ul className="list-unstyled mb-2">
           {uploadedVideo.map((img, index) => (
-            <li key={index} className="mb-2">
+            <li
+              key={index}
+              className="mb-2"
+              draggable
+              onDragStart={() => (dragVideo.current = index)}
+              onDragEnter={() => (dragOverVideo.current = index)}
+              onDragEnd={handleSort}
+              onDragOver={(e) => e.preventDefault()}
+            >
               <div className="wraper-box-video">
                 <div
                   className={`layer-video ${active === index && "active"}`}
@@ -104,7 +124,7 @@ function Graphics() {
                     <div className="box-title">
                       <p>{img.name}</p>
                     </div>
-                    <i className="fa-solid fa-clapperboard viv" />
+                    {/**  <i className="fa-solid fa-clapperboard viv" /> */}
                   </div>
                   <div className="edit">
                     <div

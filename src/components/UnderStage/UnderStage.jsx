@@ -287,13 +287,13 @@ function UnderStage() {
         <Dialog maxWidth="xs" fullWidth open={open} onClose={handleClose}>
           <div className="modal-box">
             {manage === "Editname" ? (
-              <EditName />
+              <EditName Close={handleClose} />
             ) : manage === "Kick" ? (
-              <KickFromStudion />
+              <KickFromStudion Close={handleClose} />
             ) : manage === "Ban" ? (
-              <BanFromStudion />
+              <BanFromStudion Close={handleClose} />
             ) : (
-              <EditAvatar />
+              <EditAvatar Close={handleClose} />
             )}
           </div>
         </Dialog>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Banners.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getTicker, getTitle } from "../../store/theme";
@@ -20,6 +20,17 @@ function Banners() {
   let [tickerValue, setTicker] = useState("");
   let [data, setDate] = useState([{ title: "First Banner", ticker: false }]);
   let dispatch = useDispatch();
+
+  const dragBanner = useRef(0);
+  const dragOverBanner = useRef(0);
+
+  function handleSort() {
+    const bannerClone = [...data];
+    const temp = bannerClone[dragBanner.current];
+    bannerClone[dragBanner.current] = bannerClone[dragOverBanner.current];
+    bannerClone[dragOverBanner.current] = temp;
+    setDate(bannerClone);
+  }
 
   let handleAdd = (e, index, ticker, title) => {
     if (e === "edit") {
@@ -180,6 +191,8 @@ function Banners() {
               <i className="fa-solid fa-ellipsis-vertical edit" />
             </TooltipBoxAction>
           </div>
+
+          {/**List Of Banners  Banners */}
           <ul className="list-unstyled">
             {data &&
               data.map((value, index) => {
@@ -235,6 +248,11 @@ function Banners() {
                 ) : (
                   // Banner Content
                   <li
+                    draggable
+                    onDragStart={() => (dragBanner.current = index)}
+                    onDragEnter={() => (dragOverBanner.current = index)}
+                    onDragEnd={handleSort}
+                    onDragOver={(e) => e.preventDefault()}
                     key={index}
                     className={
                       AddTitleStage === index || AddTickerStage === index

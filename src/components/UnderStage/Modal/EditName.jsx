@@ -1,9 +1,9 @@
 import React from "react";
 
-function EditName() {
+function EditName({ Close }) {
   return (
     <div className="modal-control">
-      <div className="box-icon">
+      <div className="box-icon" onClick={() => Close()}>
         <i className="fa-solid fa-xmark" />
       </div>
       <form className="form-wrap">
