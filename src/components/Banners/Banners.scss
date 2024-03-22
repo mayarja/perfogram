@@ -37,6 +37,9 @@
     overflow-y: auto;
     list-style-type: none;
     min-height: 100%;
+    .notAdded {
+      background-color: rgb(241, 242, 245) !important;
+    }
     li {
       padding: 10px 16px;
       width: 100%;

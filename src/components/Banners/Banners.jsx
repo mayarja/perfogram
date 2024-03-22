@@ -190,7 +190,7 @@ function Banners() {
                               AddTitleStage === value.id ||
                               AddTickerStage === value.id
                                 ? "AddToStage"
-                                : ""
+                                : "notAdded"
                             } draggable-item ${
                               snapshot.isDragging ? "dragging" : ""
                             }`}
