@@ -6,12 +6,12 @@ import useDisableScrollBounce from "./useDisableScrollBounce";
 
 function App() {
   let { startStatus } = useSelector((state) => state.themeslice);
-  const { isBounceDisabled, setIsBounceDisabled } = useDisableScrollBounce();
+  // const { isBounceDisabled, setIsBounceDisabled } = useDisableScrollBounce();
 
   return (
     <div
       className="App"
-      onTouchStart={() => setIsBounceDisabled(true)}
+      // onTouchStart={() => setIsBounceDisabled(true)}
       style={{ overflowScroll: "touch" }}
     >
       {startStatus ? <StartPage /> : <MainPage />}
