@@ -91,9 +91,9 @@ function BoxVideo() {
   const screenWidth = window.innerWidth;
   useEffect(() => {
     // Call handleResize when sideBarStatus changes
-    if (screenWidth <= 1199) {
-      ResizeBySideBar();
-    }
+    // if (screenWidth <= 1199) {
+    ResizeBySideBar();
+    // }
   }, [sideBarStatus]); // Only called when sideBarStatus changes
 
   useEffect(() => {

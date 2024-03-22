@@ -9,7 +9,11 @@ function App() {
   const { isBounceDisabled, setIsBounceDisabled } = useDisableScrollBounce();
 
   return (
-    <div className="App" onTouchStart={() => setIsBounceDisabled(true)}>
+    <div
+      className="App"
+      onTouchStart={() => setIsBounceDisabled(true)}
+      style={{ overflowScroll: "touch" }}
+    >
       {startStatus ? <StartPage /> : <MainPage />}
     </div>
   );

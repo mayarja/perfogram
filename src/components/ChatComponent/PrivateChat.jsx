@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./PrivateChat.scss";
 import { TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
+import { useSelector } from "react-redux";
 
 function PrivateChat() {
   let [data, setDate] = useState([
@@ -40,6 +41,8 @@ function PrivateChat() {
     }
   };
 
+  let { status } = useSelector((state) => state.themeslice);
+
   return (
     <div className="privateChat">
       <ul className="list-unstyled">
@@ -55,52 +58,54 @@ function PrivateChat() {
                   <div className="title">
                     <p>{e.title}</p>
                   </div>
-                  <TooltipBoxAction
-                    status={false}
-                    title={
-                      <ul className="box-action-toltip list-unstyled">
-                        <li className="">
-                          <i
-                            className="fa-solid fa-minus"
-                            style={{
-                              marginRight: "-3px",
-                              marginTop: "10px",
-                              fontSize: "14px",
-                            }}
-                          />
-                          <span>Create banner</span>
-                        </li>
-                        <li className="">
-                          <i
-                            className="fa-solid fa-minus"
-                            style={{
-                              marginRight: "-3px",
-                              marginTop: "10px",
-                              fontSize: "14px",
-                            }}
-                          />
-                          <span>Create & Run banner</span>
-                        </li>
-                        <hr />
-                        <li className="">
-                          <i
-                            className="fa-solid fa-comment-slash"
-                            style={{ marginRight: "1px", fontSize: "14px" }}
-                          />
-                          <span>Send a private messsage</span>
-                        </li>
-                        <li className="">
-                          <i
-                            className="fa-solid fa-comment-slash"
-                            style={{ marginRight: "1px", fontSize: "14px" }}
-                          />
-                          <span>Delete messsage</span>
-                        </li>
-                      </ul>
-                    }
-                  >
-                    <i className="fa-solid fa-ellipsis-vertical edit" />
-                  </TooltipBoxAction>
+                  {status === "Moderator" && (
+                    <TooltipBoxAction
+                      status={false}
+                      title={
+                        <ul className="box-action-toltip list-unstyled">
+                          <li className="">
+                            <i
+                              className="fa-solid fa-minus"
+                              style={{
+                                marginRight: "-3px",
+                                marginTop: "10px",
+                                fontSize: "14px",
+                              }}
+                            />
+                            <span>Create banner</span>
+                          </li>
+                          <li className="">
+                            <i
+                              className="fa-solid fa-minus"
+                              style={{
+                                marginRight: "-3px",
+                                marginTop: "10px",
+                                fontSize: "14px",
+                              }}
+                            />
+                            <span>Create & Run banner</span>
+                          </li>
+                          <hr />
+                          <li className="">
+                            <i
+                              className="fa-solid fa-comment-slash"
+                              style={{ marginRight: "1px", fontSize: "14px" }}
+                            />
+                            <span>Send a private messsage</span>
+                          </li>
+                          <li className="">
+                            <i
+                              className="fa-solid fa-comment-slash"
+                              style={{ marginRight: "1px", fontSize: "14px" }}
+                            />
+                            <span>Delete messsage</span>
+                          </li>
+                        </ul>
+                      }
+                    >
+                      <i className="fa-solid fa-ellipsis-vertical edit" />
+                    </TooltipBoxAction>
+                  )}
                 </div>
               </li>
             ) : (
@@ -113,52 +118,54 @@ function PrivateChat() {
                   <div className="title">
                     <p>{e.title}</p>
                   </div>
-                  <TooltipBoxAction
-                    status={false}
-                    title={
-                      <ul className="box-action-toltip list-unstyled">
-                        <li className="">
-                          <i
-                            className="fa-solid fa-minus"
-                            style={{
-                              marginRight: "-3px",
-                              marginTop: "10px",
-                              fontSize: "14px",
-                            }}
-                          />
-                          <span>Create banner</span>
-                        </li>
-                        <li className="">
-                          <i
-                            className="fa-solid fa-minus"
-                            style={{
-                              marginRight: "-3px",
-                              marginTop: "10px",
-                              fontSize: "14px",
-                            }}
-                          />
-                          <span>Create & Run banner</span>
-                        </li>
-                        <hr />
-                        <li className="">
-                          <i
-                            className="fa-solid fa-comment-slash"
-                            style={{ marginRight: "1px", fontSize: "14px" }}
-                          />
-                          <span>Send a private messsage</span>
-                        </li>
-                        <li className="">
-                          <i
-                            className="fa-solid fa-comment-slash"
-                            style={{ marginRight: "1px", fontSize: "14px" }}
-                          />
-                          <span>Delete messsage</span>
-                        </li>
-                      </ul>
-                    }
-                  >
-                    <i className="fa-solid fa-ellipsis-vertical edit" />
-                  </TooltipBoxAction>
+                  {status === "Moderator" && (
+                    <TooltipBoxAction
+                      status={false}
+                      title={
+                        <ul className="box-action-toltip list-unstyled">
+                          <li className="">
+                            <i
+                              className="fa-solid fa-minus"
+                              style={{
+                                marginRight: "-3px",
+                                marginTop: "10px",
+                                fontSize: "14px",
+                              }}
+                            />
+                            <span>Create banner</span>
+                          </li>
+                          <li className="">
+                            <i
+                              className="fa-solid fa-minus"
+                              style={{
+                                marginRight: "-3px",
+                                marginTop: "10px",
+                                fontSize: "14px",
+                              }}
+                            />
+                            <span>Create & Run banner</span>
+                          </li>
+                          <hr />
+                          <li className="">
+                            <i
+                              className="fa-solid fa-comment-slash"
+                              style={{ marginRight: "1px", fontSize: "14px" }}
+                            />
+                            <span>Send a private messsage</span>
+                          </li>
+                          <li className="">
+                            <i
+                              className="fa-solid fa-comment-slash"
+                              style={{ marginRight: "1px", fontSize: "14px" }}
+                            />
+                            <span>Delete messsage</span>
+                          </li>
+                        </ul>
+                      }
+                    >
+                      <i className="fa-solid fa-ellipsis-vertical edit" />
+                    </TooltipBoxAction>
+                  )}
                 </div>
               </li>
             );
