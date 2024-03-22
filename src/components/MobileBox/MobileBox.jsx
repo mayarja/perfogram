@@ -3,7 +3,7 @@ import "./MobileBox.scss";
 import Commints from "../Commints/Commints";
 import Banners from "../Banners/Banners";
 import Brand from "../Brand/Brand";
-import PrivateChat from "../PrivateChat/PrivateChat";
+import PrivateChat from "../ChatComponent/PrivateChat";
 import SettingBar from "../SettingBar/SettingBar";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -16,6 +16,8 @@ import {
 import { BoxTooltipTitle, TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
 import UnderStage from "../UnderStage/UnderStage";
 import Viwers from "../Viwers/Viwers";
+import UploadVideos from "../UploadVideos/UploadVideos";
+import Graphics from "../Graphics/Graphics";
 
 function MobileBox() {
   let [activeBox, setActiveBox] = useState("Banners");
@@ -61,6 +63,24 @@ function MobileBox() {
             >
               <span>Brand</span>
             </div>
+
+            <div
+              onClick={(e) => {
+                setActiveBox("Videos");
+              }}
+              className={`box-item ${activeBox === "Videos" && "active"}`}
+            >
+              <span>Videos</span>
+            </div>
+
+            <div
+              onClick={(e) => {
+                setActiveBox("Graphics");
+              }}
+              className={`box-item ${activeBox === "Graphics" && "active"}`}
+            >
+              <span>Graphics</span>
+            </div>
           </Fragment>
         )}
 
@@ -101,6 +121,10 @@ function MobileBox() {
                 <Banners />
               ) : activeBox === "Brand" ? (
                 <Brand />
+              ) : activeBox === "Videos" ? (
+                <UploadVideos />
+              ) : activeBox === "Graphics" ? (
+                <Graphics />
               ) : activeBox === "Chat" ? (
                 <PrivateChat />
               ) : activeBox === "Viewer" ? (

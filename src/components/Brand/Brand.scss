@@ -65,6 +65,7 @@
   .AccordionBrand {
     .accordion-body {
       padding: 1rem 1rem;
+      margin-top: -10px;
     }
     .accordion-item {
       border: none !important;
@@ -129,7 +130,8 @@
     }
 
     .box-them {
-      margin: 0px -6px;
+      // margin: 0px -6px;
+      margin: 0;
       display: flex;
       flex-wrap: wrap;
       gap: 4px;

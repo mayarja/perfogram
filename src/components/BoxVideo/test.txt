@@ -362,3 +362,41 @@ export default MainPage;
       ResizeBySideBar();
     }
   }, [sideBarStatus]); // Only called when sideBarStatus changes
+
+
+
+  ///for banners 
+         <div className="header-Details">
+            {/**<div className="box-back" onClick={(e) => setShowFolder(true)}> */}
+            <div className="box-back">
+              {/**  <i className="fa-solid fa-angle-left" /> */}
+              <span>Example Banners</span>
+            </div>
+            <TooltipBoxAction
+              status={open}
+              title={
+                <ul className="box-action-toltip list-unstyled">
+                  <li
+                    className=""
+                    onClick={(e) => {
+                      ManageModal("Rename");
+                    }}
+                  >
+                    <i className="fa-solid fa-pen" />
+                    <span>Rename folder</span>
+                  </li>
+                  <li
+                    className=""
+                    onClick={(e) => {
+                      ManageModal("Delete");
+                    }}
+                  >
+                    <i className="fa-solid fa-trash" />
+                    <span>Delete folder</span>
+                  </li>
+                </ul>
+              }
+            >
+              <i className="fa-solid fa-ellipsis-vertical edit" />
+            </TooltipBoxAction>
+          </div>

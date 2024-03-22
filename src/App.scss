@@ -1,20 +1,21 @@
-.App {
-  font-weight: 400;
-  line-height: 1.4;
-  color: rgb(79, 84, 97);
+.list {
+  padding: 5px;
+  width: 300px;
+  background-color: lightgrey;
 }
 
-$main-color: rgba(20, 97, 225, 0.9);
-$second-color: rgb(20, 97, 225);
-::-webkit-scrollbar {
-  height: 3px;
-  width: 4px;
+.list.draggingOver {
+  background-color: lightblue;
 }
 
-::-webkit-scrollbar-track {
-  background-color: #eee;
+.item {
+  user-select: none;
+  padding: 10px;
+  margin: 0;
+  margin-bottom: 8px;
+  background-color: rgb(115, 101, 115);
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgb(165, 160, 160);
+.item.dragging {
+  background-color: rgb(190, 180, 181);
 }

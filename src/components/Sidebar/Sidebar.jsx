@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import "./Sidebar.scss";
 import Banners from "../Banners/Banners";
 import Brand from "../Brand/Brand";
-import PrivateChat from "../PrivateChat/PrivateChat";
+import PrivateChat from "../ChatComponent/PrivateChat";
 import { ManageSideBarSize } from "../../store/theme";
 import { useDispatch, useSelector } from "react-redux";
 import Viwers from "../Viwers/Viwers";

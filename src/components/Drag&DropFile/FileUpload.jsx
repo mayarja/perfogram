@@ -99,71 +99,104 @@ const FileUpload = ({ handleSelectedFile, close }) => {
     }
   };
   return (
-    <div className="drag-upload">
-      <div className="header">
-        <p className="size-reom">Landscape :</p>
-        {landscapeFile && (
-          <button onClick={handleRemoveLandscapeFile}>
-            <i className="fa-solid fa-xmark icon" />
-          </button>
-        )}
+    <div className="modal-control">
+      <div className="box-icon ">
+        <i className="fa-solid fa-xmark" />
       </div>
+      <div className="drag-upload mt-2">
+        <div className="header">
+          <p className="size-reom">Landscape</p>
+          {landscapeFile && (
+            <button onClick={handleRemoveLandscapeFile}>
+              <i className="fa-solid fa-xmark icon" />
+            </button>
+          )}
+        </div>
+        <div className="dropzone-container big-drag d-flex justify-content-center align-items-center w-100">
+          {landscapeFile ? (
+            <div className=" upload-video selected-file-container land">
+              {renderPreview(landscapeFile.file, "Landscape")}
+            </div>
+          ) : (
+            <div {...landscapeGetRootProps()} style={{ width: "100%" }}>
+              <input {...landscapeGetInputProps()} />
+              <div className="upload-video box-drag land">
+                <svg
+                  focusable={false}
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="#2D2D2F"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M17.4999 19.25V12.25H22.1666L13.9999 4.08333L5.83325 12.25H10.4999V19.25H17.4999ZM13.9999 7.38499L16.5316 9.91666H15.1666V16.9167H12.8333V9.91666H11.4683L13.9999 7.38499ZM22.1666 23.9167V21.5833H5.83325V23.9167H22.1666Z"
+                  />
+                </svg>
+                <p>Drag and drop images and videos to upload</p>
+                <p>or</p>
+                <button>
+                  <span>Add File</span>
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+        {/**<hr /> */}
+        <div className="header mt-5">
+          <p className="size-reom">Portrait</p>
+          {portraitFile && (
+            <button onClick={handleRemovePortraitFile}>
+              <i className="fa-solid fa-xmark icon" />
+            </button>
+          )}
+        </div>
+        <div className="dropzone-container big-drag port-item  d-flex justify-content-center align-items-center w-100">
+          {portraitFile ? (
+            <div className=" upload-video selected-file-container port">
+              {renderPreview(portraitFile.file, "Portrait")}
+            </div>
+          ) : (
+            <div className=" upload-video" {...portraitGetRootProps()}>
+              <input {...portraitGetInputProps()} />
+              <div
+                className="upload-video box-drag "
+                style={{ height: "350px" }}
+              >
+                <svg
+                  focusable={false}
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="#2D2D2F"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M17.4999 19.25V12.25H22.1666L13.9999 4.08333L5.83325 12.25H10.4999V19.25H17.4999ZM13.9999 7.38499L16.5316 9.91666H15.1666V16.9167H12.8333V9.91666H11.4683L13.9999 7.38499ZM22.1666 23.9167V21.5833H5.83325V23.9167H22.1666Z"
+                  />
+                </svg>
+                <p>Drag and drop images and videos to upload</p>
+                <p>or</p>
+                <button>
+                  <span>Add File</span>
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
 
-      <div className="dropzone-container  d-flex justify-content-center align-items-center w-100">
-        {landscapeFile ? (
-          <div className=" upload-video selected-file-container land">
-            {renderPreview(landscapeFile.file, "Landscape")}
+        <div className="modal-control">
+          <div className="form-wrap">
+            <button className="sucsess" onClick={(e) => AddDta(e)}>
+              <span>Submit</span>
+            </button>
           </div>
-        ) : (
-          <div {...landscapeGetRootProps()}>
-            <input {...landscapeGetInputProps()} />
-            <p className="upload-video form-control land">
-              {"Drag & drop Landscape image here, or click to select a file"}
-            </p>
-          </div>
-        )}
-      </div>
-
-      <hr />
-
-      <div className="header">
-        <p className="size-reom">Portrait :</p>
-        {portraitFile && (
-          <button onClick={handleRemovePortraitFile}>
-            <i className="fa-solid fa-xmark icon" />
-          </button>
-        )}
-      </div>
-
-      <div className="dropzone-container port-item  d-flex justify-content-center align-items-center w-100">
-        {portraitFile ? (
-          <div className=" upload-video selected-file-container port">
-            {renderPreview(portraitFile.file, "Portrait")}
-          </div>
-        ) : (
-          <div className=" upload-video" {...portraitGetRootProps()}>
-            <input {...portraitGetInputProps()} />
-            <p className=" form-control port">
-              {"Drag & drop Portrait image here, or click to select a file"}
-            </p>
-          </div>
-        )}
-      </div>
-
-      {/*uploadProgress > 0 && (
-        <progress value={uploadProgress} max="100">
-          {uploadProgress}%
-        </progress>
-      )*/}
-
-      <div className="modal-control">
-        <div className="form-wrap">
-          <button className="sucsess" onClick={(e) => AddDta(e)}>
-            <span>Submit</span>
-          </button>
-          <button className="cancle" onClick={(e) => close()}>
-            <span>Cancle</span>
-          </button>
         </div>
       </div>
     </div>

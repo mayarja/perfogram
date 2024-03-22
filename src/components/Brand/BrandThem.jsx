@@ -18,7 +18,7 @@ function BrandThem() {
 
   return (
     <Fragment>
-      <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
+      <h2 className="accordion-header mb-3" id="panelsStayOpen-headingTwo">
         <button
           className="accordion-button"
           type="button"

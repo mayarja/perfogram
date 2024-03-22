@@ -70,7 +70,7 @@ function BrandBackground() {
         aria-labelledby="panelsStayOpen-headingFour"
       >
         <div className="accordion-body">
-          <div className="BoxVideo">
+          <div className="BoxVideo BoxGraphic">
             <ul className="list-unstyled mb-2">
               {uploadedBackground.map((e, index) => (
                 <li key={index} className="mb-2">
