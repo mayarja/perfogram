@@ -30,7 +30,6 @@ function BoxVideo() {
     if (divRef.current) {
       const newHeight = divRef.current.clientHeight; // Get the new height
       const newWidth = divRef.current.clientWidth; // Get the new height
-      // console.log("sideBarStatus==>", sideBarStatus);
       const newHeightChild = childRef.current?.clientHeight; // Get the new height
       const newWidthChild = childRef.current?.clientWidth; // Get the new height
       const screenWidthLive = window.innerWidth;
@@ -44,17 +43,31 @@ function BoxVideo() {
         condition3 && Math.abs(heightFromStart - screenHightLive) > 10;
 
       if (screenWidthLive < 575 && status === "Viewer") {
-        // console.log("tes");
       } else {
         if (condition1 || condition2 || checkHeightChange) {
-          setHeight(screenWidthLive <= 1199 ? 100 : 112.5);
-          setWidth(screenWidthLive <= 1199 ? 100 : 200);
+          if (screenHightLive < 480) {
+            setHeight(50);
+            setWidth(50);
+          } else {
+            setHeight(
+              screenWidthLive <= 1199
+                ? newHeightChild - 50
+                : newHeightChild - 50
+            );
+            setWidth(
+              screenWidthLive <= 1199
+                ? newWidthChild - 100
+                : newWidthChild - 100
+            );
+          }
+        } else {
+          setHeight(newHeightChild);
+          setWidth(newWidthChild);
         }
       }
 
       setTimeout(() => {
         const newHeight = divRef.current.clientHeight; // Adjust based on your needs
-        // console.log("newHeightnewHeight", newHeight);
         let scaleValue = generateSacle(newHeight);
         setSacle(scaleValue);
         setHeight(newHeight);
@@ -64,9 +77,35 @@ function BoxVideo() {
   };
 
   const ResizeBySideBar = () => {
+    const newHeightChild = childRef.current?.clientHeight; // Get the new height
+    const newWidthChild = childRef.current?.clientWidth; // Get the new height
+    const screenWidthLive = window.innerWidth;
+    const screenHightLive = window.innerHeight;
     if (divRef.current) {
-      setHeight(100);
-      setWidth(100);
+      if (status === "Viewer") {
+        setHeight(
+          screenWidthLive <= 1199
+            ? sideBarStatus
+              ? newHeightChild
+              : newHeightChild - 100
+            : newHeightChild - 100
+        );
+        setWidth(
+          screenWidthLive <= 1199 ? newWidthChild - 100 : newWidthChild - 100
+        );
+      } else {
+        setHeight(
+          screenWidthLive <= 1199
+            ? sideBarStatus
+              ? newHeightChild
+              : newHeightChild - 100
+            : newHeightChild - 100
+        );
+        setWidth(
+          screenWidthLive <= 1199 ? newWidthChild - 100 : newWidthChild - 100
+        );
+      }
+
       setTimeout(() => {
         const newHeight = divRef.current.clientHeight; // Adjust based on your needs
         let scaleValue = generateSacle(newHeight);
@@ -90,18 +129,28 @@ function BoxVideo() {
 
   const screenWidth = window.innerWidth;
   useEffect(() => {
-    // Call handleResize when sideBarStatus changes
-    // if (screenWidth <= 1199) {
     ResizeBySideBar();
-    // }
   }, [sideBarStatus]); // Only called when sideBarStatus changes
 
   useEffect(() => {
-    // Call handleResize when sideBarStatus changes
-    ResizeBySideBar();
-  }, [status]); // Only called when sideBarStatus changes
+    const newHeightChild = childRef.current?.clientHeight; // Get the new height
+    const newWidthChild = childRef.current?.clientWidth; // Get the new height
+    const screenWidthLive = window.innerWidth;
+    const screenHightLive = window.innerHeight;
 
-  console.log("cover=1212/1*2*1/2*/>", cover);
+    if (status === "Moderator" || status === "Host") {
+      setHeight(
+        screenWidthLive <= 1199
+          ? sideBarStatus
+            ? newHeightChild
+            : newHeightChild - 300
+          : newHeightChild - 300
+      );
+      setWidth(
+        screenWidthLive <= 1199 ? newWidthChild - 300 : newWidthChild - 300
+      );
+    }
+  }, [status]);
 
   return (
     <Fragment>
