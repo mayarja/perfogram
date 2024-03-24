@@ -59,8 +59,9 @@
     position: relative;
     height: 100%;
     flex: 1 1;
-    // min-height: 291px;
     width: 100%;
+    min-height: 350px;
+    max-height: 100%;
   }
   .wrapper-result {
     position: absolute;
@@ -92,6 +93,7 @@
     bottom: 0;
     border-top: 1px solid rgba(27, 31, 41, 0.2);
     margin: auto;
+    height: 58px;
 
     .box-action {
       padding: 0;
