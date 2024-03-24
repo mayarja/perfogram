@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./StartPage.scss";
 // import img1 from "../../assits/logo-start.svg";
 import img1 from "../../assits/Perfogram_Logo_TransparentBG.png";
@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { ManageControlStatus, MangeStart } from "../../store/theme";
 function StartPage() {
   let dispatch = useDispatch();
+  let [showInput, setShowInput] = useState(true);
 
   let GoToVideoCall = (e) => {
     e.preventDefault();
@@ -17,8 +18,11 @@ function StartPage() {
     }
     document.activeElement.blur(); // Fallback for elements without specific IDs
 
+    setShowInput(false);
     dispatch(ManageControlStatus("Moderator"));
-    dispatch(MangeStart(false));
+    setTimeout(() => {
+      dispatch(MangeStart(false));
+    }, 50);
   };
 
   return (
@@ -86,19 +90,21 @@ function StartPage() {
                 GoToVideoCall(e);
               }}
             >
-              <div className="content">
-                <div className="label-box">
-                  <label htmlFor="name">Display name</label>
+              {showInput && (
+                <div className="content">
+                  <div className="label-box">
+                    <label htmlFor="name">Display name</label>
+                  </div>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autoFocus
+                    className="form-control"
+                    required
+                  />
                 </div>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  autoFocus
-                  className="form-control"
-                  required
-                />
-              </div>
+              )}
               <button>
                 <span>Enter studio</span>
               </button>
