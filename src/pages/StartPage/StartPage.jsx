@@ -10,6 +10,13 @@ function StartPage() {
 
   let GoToVideoCall = (e) => {
     e.preventDefault();
+    // Attempt to close the keyboard using a combination of methods
+    const inputElement = document.getElementById("name"); // Assuming the input field ID is "name"
+    if (inputElement) {
+      inputElement.blur(); // Try to remove focus (works in most browsers)
+    }
+    document.activeElement.blur(); // Fallback for elements without specific IDs
+
     dispatch(ManageControlStatus("Moderator"));
     dispatch(MangeStart(false));
   };

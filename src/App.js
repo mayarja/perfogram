@@ -7,26 +7,6 @@ import { useEffect } from "react";
 function App() {
   let { startStatus } = useSelector((state) => state.themeslice);
 
-  // function preventDefault(e) {
-  //   e.preventDefault();
-  // }
-
-  // function disableScroll() {
-  //   document.body.addEventListener('touchmove', preventDefault, { passive: false });
-  // }
-
-  // function enableScroll() {
-  //   document.body.removeEventListener('touchmove', preventDefault);
-  // }
-
-  // useEffect(() => {
-  //   if (startStatus) {
-  //     disableScroll();
-  //   } else {
-  //     enableScroll();
-  //   }
-  // }, [startStatus]);
-
   return (
     <div className="App" style={{ overflowScroll: "touch" }}>
       {startStatus ? <StartPage /> : <MainPage />}
