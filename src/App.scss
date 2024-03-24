@@ -5,3 +5,7 @@
     height: 100vh;
   }
 }
+html {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
