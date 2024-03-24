@@ -2,18 +2,33 @@ import MainPage from "./pages/MainPage/MainPage";
 import "./App.scss";
 import { useSelector } from "react-redux";
 import StartPage from "./pages/StartPage/StartPage";
-import useDisableScrollBounce from "./useDisableScrollBounce";
+import { useEffect } from "react";
 
 function App() {
   let { startStatus } = useSelector((state) => state.themeslice);
-  // const { isBounceDisabled, setIsBounceDisabled } = useDisableScrollBounce();
+
+  // function preventDefault(e) {
+  //   e.preventDefault();
+  // }
+
+  // function disableScroll() {
+  //   document.body.addEventListener('touchmove', preventDefault, { passive: false });
+  // }
+
+  // function enableScroll() {
+  //   document.body.removeEventListener('touchmove', preventDefault);
+  // }
+
+  // useEffect(() => {
+  //   if (startStatus) {
+  //     disableScroll();
+  //   } else {
+  //     enableScroll();
+  //   }
+  // }, [startStatus]);
 
   return (
-    <div
-      className="App"
-      // onTouchStart={() => setIsBounceDisabled(true)}
-      style={{ overflowScroll: "touch" }}
-    >
+    <div className="App" style={{ overflowScroll: "touch" }}>
       {startStatus ? <StartPage /> : <MainPage />}
     </div>
   );

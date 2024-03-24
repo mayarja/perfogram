@@ -1,9 +1,33 @@
 .viwer-mobile {
   position: relative;
   z-index: 9;
-  //   background-color: red;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  // align-items: center;
+  flex-direction: column;
+  .top-section {
+    height: 63vh !important;
+    position: relative;
+    .fading-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; /* Adjust height for desired fading area */
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        /* Transparent at top */ rgba(0, 0, 0, 0.7) 100%
+          /* Gradually fade to black at the bottom */
+      );
+      z-index: 1; /* Place it behind the messages */
+    }
+  }
+  .bottom-section {
+    height: 30vh !important;
+  }
 
   // &::before {
   //   content: "";
@@ -80,6 +104,7 @@
     padding: 10px 5px;
     flex-direction: column-reverse; /* Reversed flex-direction */
     overflow-y: auto;
+
     ::-webkit-scrollbar {
       width: 5px;
     }

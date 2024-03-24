@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Mainpage.scss";
 import Navbar from "../../components/Navbar/Navbar";
-import BoxVideo from "../../components/BoxVideo/BoxVideo";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import UnderStage from "../../components/UnderStage/UnderStage";
 import SettingBar from "../../components/SettingBar/SettingBar";
-import MobileBox from "../../components/MobileBox/MobileBox";
 import { useSelector } from "react-redux";
-import ViwerMobileCover from "../../components/ViwerMobileCover/ViwerMobileCover";
+import UnderStage from "../../components/GuestsContainer/UnderStage";
+import MobileBox from "../../components/MobileScreen/MobileBox";
+import ViwerMobileCover from "../../components/ViewerMobileScreen/ViwerMobileCover";
+import BoxVideo from "../../components/DisplayBox/BoxVideo";
 
 function MainPage() {
   let { status } = useSelector((state) => state.themeslice);

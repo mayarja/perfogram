@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Sidebar.scss";
-import Banners from "../Banners/Banners";
-import Brand from "../Brand/Brand";
 import PrivateChat from "../ChatComponent/PrivateChat";
 import { ManageSideBarSize } from "../../store/theme";
 import { useDispatch, useSelector } from "react-redux";
-import Viwers from "../Viwers/Viwers";
-import UploadVideos from "../UploadVideos/UploadVideos";
-import Graphics from "../Graphics/Graphics";
+import Viwers from "../ViewerTap/Viwers";
+import Banners from "../BannersTap/Banners";
+import Brand from "../BrandTap/Brand";
+import UploadVideos from "../VideosTap/UploadVideos";
+import Graphics from "../GraphicsTap/Graphics";
 
 function Sidebar() {
   let [close, setClose] = useState(false);

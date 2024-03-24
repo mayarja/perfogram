@@ -1,8 +1,5 @@
 import React, { Fragment, useState } from "react";
 import "./MobileBox.scss";
-import Commints from "../Commints/Commints";
-import Banners from "../Banners/Banners";
-import Brand from "../Brand/Brand";
 import PrivateChat from "../ChatComponent/PrivateChat";
 import SettingBar from "../SettingBar/SettingBar";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,10 +11,12 @@ import {
   StopCameraMic,
 } from "../../store/theme";
 import { BoxTooltipTitle, TooltipBoxAction } from "../ToolTipsFolder/ToolTips";
-import UnderStage from "../UnderStage/UnderStage";
-import Viwers from "../Viwers/Viwers";
-import UploadVideos from "../UploadVideos/UploadVideos";
-import Graphics from "../Graphics/Graphics";
+import Banners from "../BannersTap/Banners";
+import Brand from "../BrandTap/Brand";
+import UploadVideos from "../VideosTap/UploadVideos";
+import Graphics from "../GraphicsTap/Graphics";
+import Viwers from "../ViewerTap/Viwers";
+import UnderStage from "../GuestsContainer/UnderStage";
 
 function MobileBox() {
   let [activeBox, setActiveBox] = useState("Banners");
