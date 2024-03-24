@@ -68,7 +68,7 @@ function ViwerMobileCover() {
             <i className="fa-solid fa-gear"></i>
           </TooltipMobileAction>
         </div>
-        <div className="fading-overlay"></div>
+        {/**<div className="fading-overlay"></div> */}
       </div>
 
       <div className="bottom-section">

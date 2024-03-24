@@ -250,19 +250,21 @@ function SettingBar() {
 
                 {/*Box For Invite */}
                 {status !== "Viewer" && (
-                  <div className="box-icon">
-                    <i className="fa-solid fa-user-plus" />
-                    <span>Invite</span>
-                  </div>
-                )}
+                  <Fragment>
+                    <div className="box-icon">
+                      <i className="fa-solid fa-user-plus" />
+                      <span>Invite</span>
+                    </div>
 
-                <div className="box-icon">
-                  <i
-                    className="fa-solid fa-circle-xmark"
-                    style={{ color: "red" }}
-                  />
-                  <span>Leave Studio</span>
-                </div>
+                    <div className="box-icon">
+                      <i
+                        className="fa-solid fa-circle-xmark"
+                        style={{ color: "red" }}
+                      />
+                      <span>Leave Studio</span>
+                    </div>
+                  </Fragment>
+                )}
               </div>
               {/*
                       <div className="box-question">
