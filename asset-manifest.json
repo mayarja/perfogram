@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/perfogram/static/css/main.dee2999e.css",
-    "main.js": "/perfogram/static/js/main.5077204d.js",
+    "main.css": "/perfogram/static/css/main.b4e01112.css",
+    "main.js": "/perfogram/static/js/main.dd96d92d.js",
     "static/media/about-1.jpg": "/perfogram/static/media/about-1.73f95a7b91a6a06088b1.jpg",
     "static/media/img-mobile_2.jpg": "/perfogram/static/media/img-mobile_2.e9028a65d9f191ef0a39.jpg",
     "static/media/img-mobile.jpg": "/perfogram/static/media/img-mobile.b49d55ad90ada5538049.jpg",
@@ -11,15 +11,18 @@
     "static/media/Perfogram_Logo_TransparentBG.png": "/perfogram/static/media/Perfogram_Logo_TransparentBG.ea51d8c4ccde47515821.png",
     "static/media/John.jpg": "/perfogram/static/media/John.a487dd14f434d158993f.jpg",
     "static/media/camera-placeholder.jpg": "/perfogram/static/media/camera-placeholder.54ba2ca370da530eadfa.jpg",
+    "static/media/instagram.png": "/perfogram/static/media/instagram.79535458a8a6d88f81d4.png",
     "static/media/Lisa.jpg": "/perfogram/static/media/Lisa.d6ca7c9986a0366b65be.jpg",
     "static/media/india.png": "/perfogram/static/media/india.be08e68d113168b54197.png",
-    "static/media/logo.svg": "/perfogram/static/media/logo.3d16366edc01d07cc75bbc3c90597c60.svg",
+    "static/media/facebook.png": "/perfogram/static/media/facebook.49e67d43221b6bb1aa86.png",
+    "static/media/tiktok.png": "/perfogram/static/media/tiktok.0b5f4f1b378580b9cbaf.png",
+    "static/media/youtube.png": "/perfogram/static/media/youtube.b4f2b64af1b614ce26dc.png",
     "index.html": "/perfogram/index.html",
-    "main.dee2999e.css.map": "/perfogram/static/css/main.dee2999e.css.map",
-    "main.5077204d.js.map": "/perfogram/static/js/main.5077204d.js.map"
+    "main.b4e01112.css.map": "/perfogram/static/css/main.b4e01112.css.map",
+    "main.dd96d92d.js.map": "/perfogram/static/js/main.dd96d92d.js.map"
   },
   "entrypoints": [
-    "static/css/main.dee2999e.css",
-    "static/js/main.5077204d.js"
+    "static/css/main.b4e01112.css",
+    "static/js/main.dd96d92d.js"
   ]
 }
