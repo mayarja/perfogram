@@ -1,0 +1,113 @@
+.flowBox {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translate(-50%, 0px) !important;
+}
+.SettingBar {
+  // width: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  .fa-hand {
+    color: rgb(255 215 91) !important;
+  }
+
+  .fa-heart {
+    color: rgb(209 43 44) !important;
+  }
+
+  flex: 0 0 auto;
+  .wrapper-one {
+    // flex: 0 0 auto;
+  }
+  .wrapper-two {
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .conatiner-box {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    .box-action {
+      overflow: hidden;
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgba(27, 31, 41, 0.2);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px -3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      padding: 0px 4px 1px;
+      margin-top: 3px;
+      border-radius: 24px;
+      .active {
+        background-color: rgba(218, 56, 27, 0.15) !important;
+        svg {
+          fill: rgb(218, 56, 27);
+        }
+        i {
+          color: rgb(218, 56, 27) !important;
+        }
+      }
+      .box-icon {
+        padding: 7px 8px 5px;
+        overflow: hidden;
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        user-select: none;
+        text-decoration: none;
+        background-color: rgb(255, 255, 255);
+        transition: background 0.32s ease 0s;
+        cursor: pointer;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        &:hover {
+          background-color: rgb(245, 245, 245);
+        }
+        i {
+          color: rgb(79, 84, 97);
+          font-size: 20px;
+          width: 26px;
+          /* height: 23px; */
+          text-align: center;
+        }
+        span {
+          margin: 0px;
+          color: rgb(79, 84, 97);
+          font-family: "Noto Sans JP", Prompt, sans-serif !important;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+      }
+    }
+    .box-question {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-direction: column;
+      .question {
+        color: rgb(0, 75, 196) !important;
+        font-size: inherit;
+        text-decoration: underline;
+        cursor: pointer;
+        margin: 0px;
+        color: rgb(79, 84, 97);
+        font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+          sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.6;
+        margin-left: 16px;
+      }
+    }
+  }
+}

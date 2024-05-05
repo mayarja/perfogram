@@ -1,0 +1,248 @@
+.box-btns {
+  flex: 0 0 auto;
+  overflow: hidden;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: space-between;
+
+  .icnons-control {
+    width: 100%;
+    border-radius: 0px 0px 4px 4px;
+    background-color: rgb(255, 255, 255);
+  }
+  .icnons-control2 {
+    width: 100%;
+  }
+  .icnons-control3 {
+    position: relative;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4px 0px 0px 4px;
+  }
+
+  .actionsss {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .box-icon {
+    width: 53px;
+    height: 30px;
+    // margin: 0px 4px 4px 0px;
+    position: relative;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    background-color: rgb(189, 191, 199) !important;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.85;
+    }
+
+    .wraper-icon {
+      // position: absolute;
+      // width: 100%;
+      // height: 100%;
+      // top: 0px;
+      // left: 0px;
+      // background-color: #fff;
+      // border-radius: inherit;
+      // border: 2px solid #555;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      img,
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+      .inside {
+        position: absolute;
+        bottom: 6px;
+        left: 13px;
+        color: rgb(143, 148, 162);
+        font-size: 9px;
+      }
+      .conta-icon {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        -webkit-box-align: center;
+        align-items: center;
+        background-color: #fff;
+      }
+      .conta-icon2 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        -webkit-box-align: center;
+        align-items: center;
+        background-color: #fff !important;
+        border-radius: 3px;
+        padding: 3px;
+        width: 40px;
+        height: 20px;
+      }
+      .small-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        flex-direction: column;
+        i {
+          font-size: 10px;
+        }
+      }
+      .hr {
+        height: 100%;
+        width: 2px;
+        background-color: rgb(143, 148, 162);
+      }
+      i {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .wraper-icon.active {
+    background-color: rgb(255, 255, 255);
+    border-radius: inherit;
+    border: 2px solid rgb(20, 97, 225);
+    .conta-icon {
+      background-color: #fff;
+    }
+    .conta-icon2 {
+      background-color: rgb(143, 148, 162);
+    }
+    i {
+      color: rgb(20, 97, 225);
+    }
+    .hr {
+      height: 100%;
+      width: 2px;
+      background-color: rgb(20, 97, 225);
+    }
+    .inside {
+      color: #fff;
+    }
+  }
+
+  .waprer-edit-1 {
+    display: inline-block;
+    .waprer-edit-2 {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      gap: 5px;
+      .contai-edit {
+        cursor: pointer;
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background 0.2s ease 0s, border-color 0.2s ease 0s,
+          color 0.2s ease 0s, opacity 0.2s ease 0s;
+        color: rgb(20, 97, 225);
+        border: 1px solid rgb(20, 97, 225);
+        background-color: rgb(255, 255, 255);
+        padding: 0px 8px;
+
+        .puls {
+          color: rgb(20, 97, 225);
+          font-size: 32px;
+          margin-top: -8px;
+        }
+        i {
+          color: #333;
+          font-size: 16px;
+        }
+        svg {
+          width: 17px;
+          height: 17px;
+        }
+      }
+      .contai-edit.active {
+        i,
+        svg {
+          color: rgb(20, 97, 225) !important ;
+          fill: rgb(20, 97, 225) !important ;
+        }
+      }
+    }
+  }
+
+  .icnons-mode {
+    height: 38px !important;
+    position: absolute !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    border-radius: 3px;
+    .waprer-edit-1 {
+      display: inline-block;
+      .waprer-edit-2 {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+      }
+    }
+    .contai-edit.active {
+      background-color: rgb(255, 255, 255) !important;
+      border: 2px solid rgb(20, 97, 225) !important;
+      .conta-icon {
+        background-color: rgb(20, 97, 225);
+      }
+      .conta-icon2 {
+        background-color: rgb(20, 97, 225);
+      }
+      i {
+        color: rgb(20, 97, 225) !important;
+      }
+      svg {
+        color: rgb(20, 97, 225) !important;
+        fill: rgb(20, 97, 225) !important;
+      }
+      .hr {
+        height: 100%;
+        width: 2px;
+        background-color: rgb(20, 97, 225);
+      }
+      .inside {
+        color: #fff;
+      }
+    }
+    .contai-edit {
+      background-color: rgb(143, 148, 162) !important;
+      border-radius: 4px;
+      border: 2px solid rgb(143, 148, 162) !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 3px;
+      border-radius: 3px;
+      i {
+        color: #fff !important;
+      }
+      svg {
+        color: #fff !important;
+        fill: #fff !important;
+      }
+    }
+  }
+}

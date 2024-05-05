@@ -1,0 +1,245 @@
+.drag-upload {
+  padding: 8px 18px 0px;
+  // overflow-y: scroll;
+  position: relative;
+  .box-icon {
+    position: relative;
+    width: 100%;
+    i {
+      position: absolute;
+      right: 16px;
+      padding: 3px 6px;
+      top: -7px;
+      z-index: 1;
+      font-size: 20px;
+      color: rgb(105, 110, 124);
+      transition: all 0.2s ease-in;
+      right: 5px;
+    }
+  }
+  .port-item,
+  .land-item {
+    video {
+      max-width: 100%;
+      height: 100%;
+    }
+    img {
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+
+  .drag {
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+  }
+
+  .big-drag {
+    .box-drag {
+      margin-bottom: 0;
+      border: 1px dashed rgba(27, 31, 41, 0.5) !important;
+      appearance: none;
+      border-radius: 4px;
+      font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt, sans-serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.4;
+      color: rgb(27, 31, 41);
+      padding: 9px 12px;
+      resize: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 8px;
+      p {
+        margin: 0px;
+        color: rgb(79, 84, 97);
+        font-family: "Noto Sans JP", Prompt, sans-serif !important;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.6;
+        text-align: center;
+      }
+      button {
+        display: inline-flex;
+        height: 30px;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background 0.2s ease 0s, border-color 0.2s ease 0s,
+          color 0.2s ease 0s, opacity 0.2s ease 0s;
+        color: rgb(20, 97, 225);
+        border: 1px solid rgb(20, 97, 225);
+        background-color: rgb(255, 255, 255);
+        padding: 0px 12px;
+        span {
+          font-family: "Noto Sans JP", Prompt, sans-serif !important;
+          font-size: 1.2rem;
+          font-weight: 600;
+          line-height: 1.4;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .selected-file-container {
+    position: relative;
+  }
+  .uplaod-vidoe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .land {
+    width: 270px !important;
+    margin: auto;
+    height: 152px !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    video {
+      max-width: 100%;
+      height: 100%;
+    }
+    img {
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+
+  .port {
+    width: 130px !important;
+    margin: auto;
+    height: 165px !important ;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    button {
+      width: 20px;
+      height: 20px;
+      background-color: crimson;
+      border-radius: 50%;
+      justify-content: center;
+      //   position: absolute;
+      //   top: -20px;
+      //   right: 3px;
+    }
+    .icon {
+      font-size: 12px;
+      color: #fff;
+    }
+
+    .size-video,
+    .size-reom {
+      margin: 0px 0px 1.6rem;
+      color: rgb(27, 31, 41);
+      font-family: "Noto Sans JP", Prompt, sans-serif !important;
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+  }
+
+  .form-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    button {
+      width: 40%;
+    }
+    .cancle {
+      display: inline-flex;
+      height: 40px;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      width: 35%;
+      position: relative;
+      text-align: center;
+      overflow-wrap: break-word;
+      overflow: hidden;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s ease 0s, border-color 0.2s ease 0s,
+        color 0.2s ease 0s, opacity 0.2s ease 0s;
+      color: rgb(255, 255, 255);
+      background-color: rgb(162, 168, 177);
+      padding: 5px 10px;
+      cursor: pointer;
+      margin: 0;
+      &:hover {
+        background-color: rgb(91, 97, 107);
+      }
+      span {
+        font-family: "Noto Sans JP", Prompt, sans-serif !important;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.4;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        opacity: 1;
+        color: #fff;
+      }
+    }
+
+    .sucsess {
+      display: inline-flex;
+      height: 27px;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      width: 45%;
+      position: relative;
+      text-align: center;
+      overflow-wrap: break-word;
+      overflow: hidden;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s ease 0s, border-color 0.2s ease 0s,
+        color 0.2s ease 0s, opacity 0.2s ease 0s;
+      color: rgb(255, 255, 255);
+      background-color: rgb(20, 97, 225);
+      padding: 5px 10px;
+      cursor: pointer;
+      margin: 0;
+      &:hover {
+        background-color: rgb(17, 81, 188);
+      }
+      span {
+        font-family: "Noto Sans JP", Prompt, sans-serif !important;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.4;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        opacity: 1;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,265 @@
+.understage {
+  width: 100%;
+  // flex: 1 0 128px;
+  flex: 1 0 148px;
+  display: flex;
+  overflow: hidden;
+  .wrpaer-understage {
+    width: 100%;
+    padding: 8px 0px 0px 8px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box-conatiner-2 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* padding: 0 13px 40px 20px; */
+    gap: 10px;
+    margin: auto;
+    padding-bottom: 40px;
+  }
+  .box-understange {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    // margin-top: 5px;
+    // margin-bottom: 9px;
+    transition: all 0.3s ease;
+  }
+  .box-user {
+    transition: all 0.3s ease;
+    width: 166px;
+    height: 94px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-sizing: content-box;
+    margin: 8px;
+    border-width: 1px;
+    border-color: rgba(27, 31, 41, 0.2);
+    border-style: solid;
+    // margin-right: 25px;
+    &:hover {
+      .AddBtn {
+        transition: all 0.3s ease;
+        opacity: 1;
+      }
+    }
+
+    .box-img {
+      background-color: #141313;
+      width: 100%;
+      flex: 1 1 0%;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      // min-height: 104px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      video {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .title {
+      background-color: #211f37d4;
+      color: rgb(79, 84, 97);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center !important;
+      i {
+        font-size: 13px;
+        margin-left: 3px;
+      }
+      span {
+        margin: 0px;
+        font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+          sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: #fff;
+      }
+    }
+    .AddBtn {
+      position: absolute;
+      cursor: pointer;
+      top: 50%;
+      left: 50%;
+      background-color: #fff;
+      color: rgb(79, 84, 97);
+      width: 90%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
+      padding: 5px 2px;
+      border-radius: 5px;
+      text-align: center;
+      opacity: 0;
+      text {
+        transition: all 0.3s ease;
+        font-family: "Noto Sans JP", Prompt, sans-serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.4;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        opacity: 1;
+        justify-content: center;
+      }
+    }
+    .AddBtn.Remove {
+      background-color: rgb(17, 81, 188) !important;
+      &:hover {
+        background-color: rgb(17, 81, 188) !important;
+      }
+    }
+    .Remove {
+      background-color: rgb(21 196 13) !important;
+      text,
+      span,
+      i {
+        color: #fff;
+      }
+      &:hover {
+        background-color: rgb(21 196 13) !important;
+      }
+    }
+    .big-control {
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0px 3px;
+      .mainActive {
+        .avatar-icon {
+          border: 3px solid rgb(17, 81, 188) !important;
+          background-color: rgb(17, 81, 188) !important;
+        }
+        i {
+          color: #fff !important;
+          fill: rgb(17, 81, 188) !important;
+        }
+      }
+      .box-user-avatar {
+        width: 35px;
+        height: 22px;
+        cursor: pointer;
+        .avatar-icon {
+          width: 35px;
+          height: 22px;
+          display: flex;
+          -webkit-box-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          align-items: center;
+          background-color: rgb(255, 255, 255);
+          border-radius: 2px;
+          border: 2px solid rgb(255, 255, 255);
+          .wrapper {
+            width: 36px;
+            height: 24px;
+            border: none;
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            background-color: transparent;
+            border-radius: 1px;
+            margin-top: -6px;
+            svg {
+              color: #fff;
+              fill: #fff;
+            }
+            i {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+    .control {
+      background-color: #fff;
+      color: rgb(79, 84, 97);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 2px;
+      width: 30%;
+      padding: 3px;
+      border-radius: 3px;
+      i {
+        font-size: 14px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 2px;
+
+        align-items: center;
+        &:hover {
+          background-color: lightgray;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}
+
+.box-avatar {
+  width: 100%;
+  height: 100%;
+  padding: 0px 4px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(27, 31, 41);
+  color: rgb(255, 255, 255);
+  opacity: 0.55;
+  .wraper-avatar {
+    width: 44px;
+    height: 44px;
+    position: relative;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  video {
+    width: 100%;
+    height: 100%;
+  }
+}

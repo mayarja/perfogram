@@ -1,0 +1,263 @@
+.privateChat {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  overflow: hidden;
+  ul {
+    flex: 1 1 0%;
+    margin: 0px;
+    padding: 16px;
+    list-style-type: none;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    z-index: 1;
+    min-height: 110px;
+    .main {
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 16px;
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+
+      overflow-wrap: break-word;
+      p {
+        max-width: 100%;
+        margin-bottom: 1px;
+        margin: 0px;
+        color: rgb(105, 110, 124);
+        font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+          sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.6;
+        .point {
+          margin: 0 6px;
+          color: rgb(105, 110, 124);
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+            sans-serif;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+        span {
+          opacity: 0.7;
+          color: rgb(105, 110, 124);
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+            sans-serif;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+      }
+      .box-title {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        i {
+          font-size: 13px;
+          color: gray;
+          cursor: pointer;
+        }
+      }
+
+      .title {
+        max-width: 100%;
+        padding: 3px 8px;
+        background-color: rgb(228, 236, 255);
+        border-radius: 4px;
+        p {
+          margin: 0px;
+          color: rgb(27, 31, 41);
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+            sans-serif;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+      }
+    }
+
+    .notmian {
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      overflow-wrap: break-word;
+      p {
+        max-width: 100%;
+        margin-bottom: 1px;
+        margin: 0px;
+        color: rgb(105, 110, 124);
+        font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+          sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.6;
+        .point {
+          margin: 0 6px;
+          color: rgb(105, 110, 124);
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+            sans-serif;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+        span {
+          opacity: 0.7;
+          color: rgb(105, 110, 124);
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+            sans-serif;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+      }
+      .box-title {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        i {
+          font-size: 13px;
+          color: gray;
+          cursor: pointer;
+        }
+      }
+      .title {
+        max-width: 100%;
+        padding: 4px 8px;
+        background-color: rgb(241, 242, 245);
+        border-radius: 4px;
+        p {
+          margin: 0px;
+          color: rgb(27, 31, 41);
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+            sans-serif;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+  .epr_-kg0voo {
+    display: none !important;
+  }
+  .BoxSend {
+    flex: 0 0 auto;
+    text-align: right;
+    padding: 0px 12px 12px;
+    position: relative;
+    background: rgb(255, 255, 255);
+    z-index: 4;
+
+    .send {
+      display: flex;
+      min-width: 216px;
+      border-radius: 19px;
+      border: 1px solid rgba(27, 31, 41, 0.5);
+      .left-form {
+        display: inline-block;
+        margin: 0px;
+        text-align: left;
+        width: 100%;
+        position: relative;
+        .emoji {
+          position: absolute;
+          top: 0;
+          left: 10px;
+          width: 20px;
+          height: 100%;
+          // border-right: 1px solid gray;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-right: 8px;
+          cursor: pointer;
+          i {
+            font-size: 18px;
+          }
+        }
+        input {
+          padding-left: 40px !important;
+          border: none;
+          vertical-align: bottom;
+          padding: 14px 0px 14px 14px;
+          min-height: 50px !important;
+          width: 100%;
+          appearance: none;
+          background: rgb(255, 255, 255);
+          border-radius: 25px;
+          font-family: AvertaStd-Regular, Arial, "Noto Sans JP", Prompt,
+            sans-serif;
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.4;
+          color: rgb(27, 31, 41);
+          padding: 5px;
+          resize: none;
+          overflow: auto;
+        }
+        input:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+      .icon-send {
+        margin: 8px;
+        align-self: flex-end;
+        .box-iconACtive {
+          opacity: 1 !important;
+          transition: all 0.2s ease !important;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(20, 97, 225);
+            i {
+              transition: all 0.2s ease !important;
+
+              color: #fff !important;
+            }
+          }
+        }
+        .box-icon {
+          height: 32px;
+          width: 32px;
+          padding: 0px;
+          display: inline-flex;
+          -webkit-box-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          justify-content: center;
+          position: relative;
+          text-align: center;
+          overflow-wrap: break-word;
+          overflow: hidden;
+          border-radius: 4px;
+          text-decoration: none;
+          opacity: 0.38;
+          transition: all 0.2s ease !important;
+          color: rgb(105, 110, 124);
+          background-color: transparent;
+          transition: fill 0.2s ease 0s;
+          border: none;
+          i {
+            transition: fill 0.2s ease 0s;
+            transition: all 0.2s ease !important;
+            font-size: 17px;
+          }
+          .active {
+            transition: fill 0.2s ease 0s;
+            color: rgb(20, 97, 225);
+          }
+        }
+      }
+    }
+  }
+}

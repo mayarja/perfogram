@@ -1,0 +1,129 @@
+.all-action {
+  .edit i {
+    font-size: 14px !important ;
+  }
+  .notAdded {
+    background-color: rgb(241, 242, 245);
+    padding: 0px 9px !important;
+  }
+  .active {
+    background-color: rgba(20, 97, 225, 0.93) !important;
+    color: #fff;
+    padding: 4px;
+    .video-active svg {
+      color: rgba(20, 97, 225, 0.93) !important;
+      fill: rgba(20, 97, 225, 0.93) !important;
+    }
+    .box-icons i,
+    span,
+    svg {
+      color: #fff !important;
+      fill: #fff !important;
+    }
+    .main-icon i {
+      color: #fff;
+    }
+    .title .box-tiker span {
+      color: #333 !important;
+    }
+    .title span {
+      color: #fff !important;
+    }
+    .Title {
+      i,
+      text {
+        color: #fff !important;
+      }
+    }
+    .icon-edit-all {
+      color: #fff !important;
+    }
+
+    .box-action {
+      background-color: rgba(20, 97, 225, 0.93) !important;
+    }
+  }
+  ul {
+    .active {
+      &:hover {
+        background-color: rgba(20, 97, 225, 0.93) !important;
+        i {
+          color: #fff !important;
+        }
+      }
+    }
+    li {
+      min-height: 60px !important;
+      .icon-edit-all {
+        font-size: 1.8rem;
+      }
+      .box-title {
+        flex: 1 1;
+        margin-right: 8px !important;
+        overflow: hidden;
+        display: flex !important;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px !important;
+
+        .title {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: row;
+          gap: 5px;
+          .element {
+            width: 83px;
+            height: 47px;
+            min-width: 83px;
+            .box-noimage {
+              border: 1px solid #333;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              padding: 4px;
+              i {
+                font-size: 1.4rem;
+              }
+
+              span {
+                font-size: 1.2rem;
+              }
+            }
+            img {
+              width: 100%;
+              height: 100%;
+            }
+            video {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .box-icons {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          gap: 15px;
+          width: 27px;
+          text-align: center;
+          min-width: 29px;
+          svg {
+            fill: rgb(79, 84, 97);
+            font-size: 1.8rem;
+            width: 20px;
+            height: 20px;
+          }
+          i {
+            font-size: 2rem;
+            width: 20px;
+          }
+        }
+      }
+    }
+  }
+}

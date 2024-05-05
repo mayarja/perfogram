@@ -1,0 +1,178 @@
+.box-setting.close {
+  min-width: 74px;
+  .active {
+    &::before {
+      border-width: 0px !important;
+    }
+  }
+}
+.box-setting.open {
+  min-width: 420px;
+  @media screen and (min-width: 1200px) {
+    min-width: 460px;
+  }
+}
+.box-setting.close.Viewer {
+  min-width: 0px;
+  width: 0;
+  .active {
+    &::before {
+      border-width: 0px !important;
+    }
+  }
+}
+
+.box-setting.open.Viewer {
+  min-width: 380px;
+  margin: 0px 0px 0px 0px !important;
+  background-color: rgb(19, 19, 21) !important;
+  .wrapper-side ul {
+    padding: 1px 8px 60px !important;
+  }
+  .wrapper {
+    padding-top: 0 !important;
+  }
+  .wrapper-result {
+    border-radius: 0 !important;
+    border-top-left-radius: 30px !important;
+    border-bottom-left-radius: 30px !important;
+  }
+  .wrapper-side {
+    border-radius: 0 !important;
+    border-top-left-radius: 30px !important;
+    border-bottom-left-radius: 30px !important;
+  }
+
+  .BoxViewer ul li .content {
+    gap: 9px !important;
+  }
+  @media screen and (min-width: 1200px) {
+    min-width: 380px;
+    margin: 0px 0px 0px 0px !important;
+  }
+}
+
+.box-setting {
+  .wrapper-side {
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 14px 14px 14px 0px;
+    border: 1px solid lightgray;
+    .accordion.AccordionBrand {
+      overflow-y: scroll;
+    }
+  }
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 10px;
+  // background-color: rgb(255, 255, 255);
+  // border-left: 1px solid rgba(27, 31, 41, 0.2);
+
+  .box-icon {
+    flex: 0 0 auto;
+    width: 7.476em;
+    display: flex;
+    flex-direction: column;
+    // background-color: rgb(255, 255, 255);
+    // border-left: 1px solid rgba(27, 31, 41, 0.2);
+    .icons-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 4px;
+      gap: 8px;
+      // border-left: 1px solid rgba(27, 31, 41, 0.2);
+      padding-top: 4px;
+      height: 100%;
+      justify-content: space-between;
+      align-items: center;
+      .box-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 3px;
+        border-radius: 20px;
+        width: fit-content;
+        // margin: auto;
+        padding: 10px 2px;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px;
+      }
+      .container-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 8px 5px;
+        gap: 3px;
+        max-width: 30px !important;
+        min-width: 30px !important;
+        i {
+          font-size: 24px;
+        }
+        svg {
+          width: 24px;
+          height: 24px;
+          fill: rgb(79, 84, 97);
+        }
+        span {
+          font-size: 1.2rem;
+          line-height: 1.2;
+          margin: 0px 1px;
+          text-align: center;
+          color: rgb(79, 84, 97);
+        }
+        &:hover {
+          background: rgb(241, 242, 245);
+          fill: rgb(0, 75, 196);
+          color: rgb(0, 75, 196);
+        }
+      }
+      .active {
+        // background-color: rgb(228, 236, 255);
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: -25px;
+          top: 5px;
+          width: 10px;
+          height: 14px;
+          /* border-radius: 50%; */
+          border-width: 16px;
+          border-style: solid;
+          border-color: transparent transparent transparent rgb(193, 193, 193);
+          transition: all 0.3s ease;
+        }
+        i,
+        span,
+        svg {
+          color: rgb(6, 77, 191);
+          fill: rgb(6, 77, 191);
+        }
+        &:hover {
+          background-color: rgb(228, 236, 255);
+        }
+      }
+    }
+  }
+
+  .box-result {
+    position: relative;
+    height: 100%;
+    flex: 1 1 0%;
+    .wrapper-result {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 30px;
+    }
+  }
+}
