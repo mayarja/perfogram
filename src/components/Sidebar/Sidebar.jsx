@@ -18,6 +18,7 @@ import iconVideo from "../../assits/banner_icon_02.svg";
 import VideoSvg from "../Svgs/VideoSvg";
 import BannerSvg from "../Svgs/BannerSvg";
 import PollSvg from "../Svgs/PollSvg";
+import QuestionSvg from "../Svgs/QuestionSvg";
 
 function Sidebar() {
   let [close, setClose] = useState(false);
@@ -91,6 +92,14 @@ function Sidebar() {
                     >
                       <VideoSvg
                         color={Check === "Videos" ? "active" : "#575d68"}
+                        miancolor={
+                          Check === "Videos" ? "#ffffff" : "rgb(79, 84, 97)"
+                        }
+                        backgroundColor={
+                          Check === "Videos"
+                            ? "rgb(10, 76, 199)"
+                            : "rgb(79, 84, 97)"
+                        }
                       />
                     </div>
 
@@ -109,7 +118,13 @@ function Sidebar() {
                       }`}
                       onClick={(e) => setCheck("Questions")}
                     >
-                      <i className="fa-solid fa-question" />
+                      <QuestionSvg
+                        backgroundColor={
+                          Check === "Questions"
+                            ? "rgb(10, 76, 199)"
+                            : "rgb(79, 84, 97)"
+                        }
+                      />
                     </div>
 
                     <div

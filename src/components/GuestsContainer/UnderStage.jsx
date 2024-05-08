@@ -19,9 +19,7 @@ import {
 } from "../../store/mySlice.js";
 
 function UnderStage() {
-  let { Users, mic, stopMicCam, cam } = useSelector(
-    (state) => state.persistData.users
-  );
+  let { Users, mic, stopMicCam, cam } = useSelector((state) => state.users);
   let { myData } = useSelector((state) => state.persistData.myData);
 
   console.log("myData", myData);

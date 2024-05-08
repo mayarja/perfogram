@@ -123,7 +123,6 @@ const customReducer = combineReducers({
   covers: persistReducer(coverPersistConfig, covers),
   socials: persistReducer(socialsPersistConfig, socials),
   chatMeesages: persistReducer(chatMeesagePersistConfig, chatMeesages),
-  users: persistReducer(usersPersistConfig, users),
   myData: persistReducer(myDataPersistConfig, myData),
 });
 
@@ -133,6 +132,7 @@ let store = configureStore({
   reducer: {
     themeslice: themeslice,
     persistData: persistCustomReducer,
+    users: users,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

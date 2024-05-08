@@ -33,9 +33,7 @@ function MobileBox() {
   let { settingBox, status } = useSelector((state) => state.themeslice);
   let { myData } = useSelector((state) => state.persistData.myData);
 
-  let { mic, stopMicCam, cam } = useSelector(
-    (state) => state.persistData.users
-  );
+  let { mic, stopMicCam, cam } = useSelector((state) => state.users);
 
   let dispatch = useDispatch();
 

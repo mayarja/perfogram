@@ -15,7 +15,7 @@ import VideoSvg from "../Svgs/VideoSvg";
 import { addAllAction, deleteAllAction } from "../../store/allActionsSlice.js";
 import { manageUsers } from "../../store/usersSlice.js";
 function UploadVideos() {
-  let { Users } = useSelector((state) => state.persistData.users);
+  let { Users } = useSelector((state) => state.users);
   let { videos } = useSelector((state) => state.persistData.videos);
 
   let [File, setFile] = useState("");
@@ -192,8 +192,15 @@ function UploadVideos() {
                             <div className="box-title">
                               <div className="box-icons video-active">
                                 <VideoSvg
-                                  color={
-                                    checkActive(video.id) ? "active" : "#575d68"
+                                  miancolor={
+                                    checkActive(video.id)
+                                      ? "#ffffff"
+                                      : "rgb(79, 84, 97)"
+                                  }
+                                  backgroundColor={
+                                    checkActive(video.id)
+                                      ? "rgb(10, 76, 199)"
+                                      : "rgb(79, 84, 97)"
                                   }
                                 />
                               </div>

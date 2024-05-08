@@ -31,7 +31,7 @@ import { manageUsers } from "../../store/usersSlice";
 
 function AllActionTap() {
   // let { Users } = useSelector((state) => state.themeslice);
-  let { Users } = useSelector((state) => state.persistData.users);
+  let { Users } = useSelector((state) => state.users);
   let { currentSelected: currentQuestion } = useSelector(
     (state) => state.persistData.questions
   );
@@ -450,6 +450,14 @@ function AllActionTap() {
           <div className="box-icons video-active">
             <VideoSvg
               color={checkActiveVideo(value.id) ? "active" : "#575d68"}
+              miancolor={
+                checkActiveVideo(value.id) ? "#ffffff" : "rgb(79, 84, 97)"
+              }
+              backgroundColor={
+                checkActiveVideo(value.id)
+                  ? "rgb(10, 76, 199)"
+                  : "rgb(79, 84, 97)"
+              }
             />
           </div>
           <div className="title">

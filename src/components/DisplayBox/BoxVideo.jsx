@@ -42,7 +42,7 @@ function BoxVideo() {
     statusTapViewer,
   } = useSelector((state) => state.themeslice);
 
-  let { Users } = useSelector((state) => state.persistData.users);
+  let { Users } = useSelector((state) => state.users);
 
   let { currentSelected, stateCreateQues } = useSelector(
     (state) => state.persistData.questions
@@ -604,6 +604,7 @@ function BoxVideo() {
               fontColor={fontColor}
               sacle={sacle}
               screenMode={screenMode}
+              widthBox={childRef.current?.clientWidth}
               userName
             />
           )}
@@ -708,6 +709,7 @@ function BoxVideo() {
               sacle={sacle}
               screenMode={screenMode}
               status={status}
+              widthBox={childRef.current?.clientWidth}
             />
             <div className="d-none d-sm-flex">
               {currentSelected &&

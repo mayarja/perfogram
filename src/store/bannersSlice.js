@@ -74,7 +74,7 @@ const bannersSlice = createSlice({
       })
       .addCase(fetchBanners.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payloadl;
+        state.error = action.payload;
       });
 
     //update Banners

@@ -11,6 +11,7 @@ function TitleInsideBox({
   screenMode,
   userName,
   status,
+  widthBox,
 }) {
   // transform: scale(0.28349);
   // width: 1245px;
@@ -213,7 +214,7 @@ function TitleInsideBox({
                   ? "bottom"
                   : "center"
                 : "left bottom",
-              left: userName ? "0" : "1.25%",
+              left: userName ? "0" : "0%",
               bottom:
                 screenMode === "portrait"
                   ? ticker
@@ -230,10 +231,10 @@ function TitleInsideBox({
                 screenMode === "portrait"
                   ? userName
                     ? "100%"
-                    : "1248px"
+                    : widthBox / sacle
                   : userName
                   ? "100%"
-                  : "1248px",
+                  : widthBox / sacle,
             }}
           >
             {title && !title.ticker && (

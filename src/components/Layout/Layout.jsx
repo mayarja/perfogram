@@ -13,13 +13,10 @@ import addnew from "../../assits/layout_plus_2.svg";
 function Layout() {
   let { layout } = useSelector((state) => state.themeslice);
 
-  let [typeCheck, setTypeCheck] = useState("landscape");
-
   let [canChangeMode, setCanChangeMode] = useState(true); // Flag to control function calls
 
   let chnageMode = (e) => {
     if (canChangeMode) {
-      setTypeCheck(e);
       dispatch(ChangeScrennMode(e));
       setCanChangeMode(false);
       setTimeout(() => {
@@ -39,9 +36,7 @@ function Layout() {
               placement="top"
             >
               <div
-                className={`contai-edit ${
-                  typeCheck === "landscape" && "active"
-                }`}
+                className={`contai-edit ${layout === "landscape" && "active"}`}
                 onClick={() => {
                   chnageMode("landscape");
                 }}
@@ -56,9 +51,7 @@ function Layout() {
               placement="top"
             >
               <div
-                className={`contai-edit ${
-                  typeCheck === "portrait" && "active"
-                }`}
+                className={`contai-edit ${layout === "portrait" && "active"}`}
                 onClick={() => {
                   chnageMode("portrait");
                 }}

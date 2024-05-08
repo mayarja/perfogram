@@ -94,7 +94,6 @@ export let {
   ManageAddItemToListAll,
   ManageReOrderAllAction,
   ShowNameUserFn,
-  getTicker,
   getTheme,
   getMainColor,
   getFontColor,

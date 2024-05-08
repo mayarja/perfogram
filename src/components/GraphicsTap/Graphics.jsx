@@ -15,7 +15,7 @@ import { addAllAction, deleteAllAction } from "../../store/allActionsSlice.js";
 import { manageUsers } from "../../store/usersSlice.js";
 
 function Graphics() {
-  let { Users } = useSelector((state) => state.persistData.users);
+  let { Users } = useSelector((state) => state.users);
   let { graphics } = useSelector((state) => state.persistData.graphics);
   console.log("graphics", graphics);
   let [active, setActive] = useState(null);
